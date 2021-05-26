@@ -10,7 +10,8 @@
             <center>
             <h1>RoBuster</h1>
                 eraFEK / eratoho-k character creator<br>
-                Version 1<br><br>
+                Version 1<br>
+                This website requires javascript to function.<br><br>
             <div>
                 <input type="text" id="txtID" placeholder="ID" required>
             </div>
@@ -66,7 +67,7 @@
                 <br>
             <div class="column3">
                 <div class="slidecontainer">
-                    <input type="range" min="1000" max="3000" class="slider" id="sliderSTR" step="50">
+                    <input type="range" min="1000" max="3000" class="slider" id="sliderSTR" step="10">
                     <p>STR: <span id="STRSlide"></span></p>
                 </div>
 
@@ -81,7 +82,7 @@
                 </script>
 
                 <div class="slidecontainer">
-                    <input type="range" min="1000" max="3000" class="slider" id="sliderSTA" step="50">
+                    <input type="range" min="1000" max="3000" class="slider" id="sliderSTA" step="10">
                     <p>STA: <span id="STASlide"></span></p>
                 </div>
 
@@ -96,7 +97,7 @@
                 </script>
 
                 <div class="slidecontainer">
-                    <input type="range" min="1000" max="3000" class="slider" id="sliderWILL" step="50">
+                    <input type="range" min="1000" max="3000" class="slider" id="sliderWILL" step="10">
                     <p>WILL: <span id="WILLSlide"></span></p>
                 </div>
 
@@ -494,89 +495,54 @@
             <button class="collapsible"><b>Sensitivities</b></button>
             <div class="content">
                 <br>
-            <div class="column7"> 
-                <label for="selSmell-Sensitive" name="Smell-Sensitive">Smell-Sensitive</label>
-                <select id="selSmell-Sensitive" size="2" name="Smell-Sensitive">
-                    <option selected value="">No</option>
-                    <option value="素質,汚臭敏感,1">Yes</option>
-                </select><br><br>
-                
-                <label for="selSmell-Tolerant" name="Smell-Tolerant">Smell-Tolerant</label>
-                <select id="selSmell-Tolerant" size="2" name="Smell-Tolerant">
-                    <option selected value="">No</option>
-                    <option value="素質,汚臭鈍感,1">Yes</option>
+            <div class="column4"> 
+                <label for="selSmell-Sensitive" name="Smell-Sensitive">Smell</label>
+                <select id="selSmell-Sensitive"  name="Smell-Sensitive">
+                    <option selected value="">- No trait -</option>
+                    <option value="素質,汚臭敏感,1">Sensitive</option>
+                    <option value="素質,汚臭鈍感,1">Tolerant</option>
                 </select><br><br>
 
-                <label for="selC-Insensitive" name="C-Insensitive">C-Insensitive</label>
-                <select id="selC-Insensitive" size="2" name="C-Insensitive">
-                    <option selected value="">No</option>
-                    <option value="素質,Ｃ鈍感,1">Yes</option>
+                <label for="selC-Sensitive" name="C-Sensitive">C Sensitivity</label>
+                <select id="selC-Sensitive"  name="C-Sensitive">
+                    <option selected value="">- No Trait -</option>
+                    <option value="素質,Ｃ敏感,1">Sensitive</option>
+                    <option value="素質,Ｃ鈍感,1">Insensitive</option>
                 </select><br><br>
 
-                <label for="selC-Sensitive" name="C-Sensitive">C-Sensitive</label>
-                <select id="selC-Sensitive" size="2" name="C-Sensitive">
-                    <option selected value="">No</option>
-                    <option value="素質,Ｃ敏感,1">Yes</option>
+                <label for="selV-Sensitive" name="V-Sensitive">V Sensitivity</label>
+                <select id="selV-Sensitive"  name="V-Sensitive">
+                    <option selected value="">- No Trait -</option>
+                    <option value="素質,Ｖ敏感,1">Sensitive</option>
+                    <option value="素質,Ｖ鈍感,1">Insensitive</option>
                 </select><br><br>
 
-                <label for="selV-Insensitive" name="V-Insensitive">V-Insensitive</label>
-                <select id="selV-Insensitive" size="2" name="V-Insensitive">
-                    <option selected value="">No</option>
-                    <option value="素質,Ｖ鈍感,1">Yes</option>
+                <label for="selA-Sensitive" name="A-Sensitive">A Sensitivity</label>
+                <select id="selA-Sensitive"  name="A-Sensitive">
+                    <option selected value="">- No Trait -</option>
+                    <option value="素質,Ａ敏感,1">Sensitive</option>
+                    <option value="素質,Ａ鈍感,1">Insensitive</option>
                 </select><br><br>
 
-                <label for="selV-Sensitive" name="V-Sensitive">V-Sensitive</label>
-                <select id="selV-Sensitive" size="2" name="V-Sensitive">
-                    <option selected value="">No</option>
-                    <option value="素質,Ｖ敏感,1">Yes</option>
+                <label for="selB-Sensitive" name="B-Sensitive">B Sensitivity</label>
+                <select id="selB-Sensitive"  name="B-Sensitive">
+                    <option selected value="">- No Trait -</option>
+                    <option value="素質,Ｂ敏感,1">Sensitive</option>
+                    <option value="素質,Ｂ鈍感,1">Insensitive</option>
                 </select><br><br>
 
-                <label for="selA-Insensitive" name="A-Insensitive">A-Insensitive</label>
-                <select id="selA-Insensitive" size="2" name="A-Insensitive">
-                    <option selected value="">No</option>
-                    <option value="素質,Ａ鈍感,1">Yes</option>
+                <label for="selM-Sensitive" name="M-Sensitive">M Sensitivity</label>
+                <select id="selM-Sensitive"  name="M-Sensitive">
+                    <option selected value="">- No Trait -</option>
+                    <option value="素質,Ｍ敏感,1">Sensitive</option>
+                    <option value="素質,Ｍ鈍感,1">Insensitive</option>
                 </select><br><br>
 
-                <label for="selA-Sensitive" name="A-Sensitive">A-Sensitive</label>
-                <select id="selA-Sensitive" size="2" name="A-Sensitive">
-                    <option selected value="">No</option>
-                    <option value="素質,Ａ敏感,1">Yes</option>
-                </select><br><br>
-
-                <label for="selB-Insensitive" name="B-Insensitive">B-Insensitive</label>
-                <select id="selB-Insensitive" size="2" name="B-Insensitive">
-                    <option selected value="">No</option>
-                    <option value="素質,Ｂ鈍感,1">Yes</option>
-                </select><br><br>
-
-                <label for="selB-Sensitive" name="B-Sensitive">B-Sensitive</label>
-                <select id="selB-Sensitive" size="2" name="B-Sensitive">
-                    <option selected value="">No</option>
-                    <option value="素質,Ｂ敏感,1">Yes</option>
-                </select><br><br>
-
-                <label for="selM-Insensitive" name="M-Insensitive">M-Insensitive</label>
-                <select id="selM-Insensitive" size="2" name="M-Insensitive">
-                    <option selected value="">No</option>
-                    <option value="素質,Ｍ鈍感,1">Yes</option>
-                </select><br><br>
-
-                <label for="selM-Sensitive" name="M-Sensitive">M-Sensitive</label>
-                <select id="selM-Sensitive" size="2" name="M-Sensitive">
-                    <option selected value="">No</option>
-                    <option value="素質,Ｍ敏感,1">Yes</option>
-                </select><br><br>
-
-                <label for="selU-Insensitive" name="U-Insensitive">U-Insensitive</label>
-                <select id="selU-Insensitive" size="2" name="U-Insensitive">
-                    <option selected value="">No</option>
-                    <option value="素質,Ｕ鈍感,1">Yes</option>
-                </select><br><br>
-
-                <label for="selU-Sensitive" name="U-Sensitive">U-Sensitive</label>
-                <select id="selU-Sensitive" size="2" name="U-Sensitive">
-                    <option selected value="">No</option>
-                    <option value="素質,Ｕ敏感,1">Yes</option>
+                <label for="selU-Sensitive" name="U-Sensitive">U Sensitivity</label>
+                <select id="selU-Sensitive"  name="U-Sensitive">
+                    <option selected value="">- No Trait -</option>
+                    <option value="素質,Ｕ敏感,1">Sensitive</option>
+                    <option value="素質,Ｕ鈍感,1">Insensitive</option>
                 </select><br><br>
 
             </div>
@@ -1917,17 +1883,12 @@
             //Physical Traits
             const virgin = document.getElementById('selVirgin');
             const neverkissed = document.getElementById('selNeverKissed');
-            const cinsensitive = document.getElementById('selC-Insensitive');
             const csensitive = document.getElementById('selC-Sensitive');
-            const vinsensitive = document.getElementById('selV-Insensitive');
             const vsensitive = document.getElementById('selV-Sensitive');
-            const ainsensitive = document.getElementById('selA-Insensitive');
             const asensitive = document.getElementById('selA-Sensitive');
-            const binsensitive = document.getElementById('selB-Insensitive');
             const bsensitive = document.getElementById('selB-Sensitive');
-            const minsensitive = document.getElementById('selM-Insensitive');
             const msensitive = document.getElementById('selM-Sensitive');
-            const smelltolerant = document.getElementById('selSmell-Tolerant');
+            const usensitive = document.getElementById('selU-Sensitive');
             const smellsensitive = document.getElementById('selSmell-Sensitive');
             const getsweteasily = document.getElementById('selGets-Wet-Easily');
             const getswetslowly = document.getElementById('selGets-Wet-Slowly');
@@ -1938,8 +1899,6 @@
             const frail = document.getElementById('selFrail');
             const nicelegs = document.getElementById('selNice-Legs');
             const nicebutt = document.getElementById('selNice-Butt');
-            const uinsensitive = document.getElementById('selU-Insensitive');
-            const usensitive = document.getElementById('selU-Sensitive');
             const lactating = document.getElementById('selLactating');
             const childsbody = document.getElementById('selChilds-Body');
             const animalears = document.getElementById('selAnimal-Ears');
@@ -2080,7 +2039,7 @@
             const whoringexp = document.getElementById('sliderWhoringExp');
    
             // Phys List
-            let traitListPhys = [virgin.value, neverkissed.value, cinsensitive.value, csensitive.value, vinsensitive.value, vsensitive.value, ainsensitive.value, asensitive.value, binsensitive.value, bsensitive.value, minsensitive.value, msensitive.value, smelltolerant.value, smellsensitive.value, getsweteasily.value, getswetslowly.value, strongstomach.value, skilledtongue.value, weakbladder.value, healthy.value, frail.value, nicelegs.value, nicebutt.value, uinsensitive.value, usensitive.value, lactating.value, childsbody.value, animalears.value, tail.value, hairlength.value, currentarmpithair.value, bustsize.value, penissize.value, hipsize.value, bodytype.value, currentpubichair.value];
+            let traitListPhys = [virgin.value, neverkissed.value, csensitive.value, vsensitive.value, asensitive.value, bsensitive.value, msensitive.value, smellsensitive.value, getswetslowly.value, strongstomach.value, skilledtongue.value, weakbladder.value, healthy.value, frail.value, nicelegs.value, nicebutt.value, uinsensitive.value, usensitive.value, lactating.value, childsbody.value, animalears.value, tail.value, hairlength.value, currentarmpithair.value, bustsize.value, penissize.value, hipsize.value, bodytype.value, currentpubichair.value];
             let traitFilterPhys = [];
 
             for(i = 0; i < traitListPhys.length; i++){

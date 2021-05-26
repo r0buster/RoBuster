@@ -128,3 +128,15 @@ body {
   transition: max-height 0.2s ease-out;
   background-color: #f1f1f1;
 }
+
+input[type=button] {
+  width: 100%;
+  background-color: #2856d3;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+

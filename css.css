@@ -1,0 +1,130 @@
+* {
+  box-sizing: border-box;
+}
+div {
+  padding: 10px;
+  background-color: #f6f6f6;
+  overflow: hidden;
+  color:rgb(20, 20, 20);
+
+}
+input[type=text], textarea, select {
+  font: 17px Calibri;
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+input[type=button]{ 
+  font: 17px Calibri;
+  width: auto;
+  float: right;
+  cursor: pointer;
+  padding: 7px;
+}
+
+.column2 {
+  display: inline-block;
+  column-count: 2;
+  text-align: center;
+  width: auto;
+  background: rgba(0, 34, 128, 0.1) ;
+  border-radius: 10px;
+}
+
+.column3 {
+  display: inline-block;
+  column-count: 3;
+  text-align: center;
+  width: auto;
+  background: rgba(0, 34, 128, 0.1) ;
+  border-radius: 10px;
+}
+
+.column4 {
+  display: inline-block;
+  column-count: 4;
+  text-align: center;
+  width: auto;
+  background: rgba(0, 34, 128, 0.1) ;
+  border-radius: 10px;
+}
+
+.column5 {
+  display: inline-block;
+  column-count: 5 ;
+  text-align: center;
+  width: auto;
+  background: rgba(0, 34, 128, 0.1) ;
+  border-radius: 10px;
+}
+
+.column6 {
+  display: inline-block;
+  column-count: 6;
+  text-align: center;
+  width: auto;
+  background: rgba(0, 34, 128, 0.1) ;
+  border-radius: 10px;
+}
+
+.column7 {
+  display: inline-block;
+  column-count: 7;
+  text-align: center;
+  width: auto;
+  background: rgba(0, 34, 128, 0.1) ;
+  border-radius: 10px;
+}
+
+.slidecontainer {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.fifty {
+  width: 33%;
+}
+
+body {
+  font: 17px Calibri;
+  width: 80%;
+  margin: auto;
+  background-color: rgb(80, 80, 80);
+}
+
+.collapsible {
+  background-color: #777;
+  color: white;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+}
+
+.active, .collapsible:hover {
+  background-color: #555;
+}
+
+.collapsible:after {
+  content: '\002B';
+  color: white;
+  font-weight: bold;
+  float: right;
+  margin-left: 5px;
+}
+
+.active:after {
+  content: "\2212";
+}
+
+.content {
+  padding: 0 18px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  background-color: #f1f1f1;
+}

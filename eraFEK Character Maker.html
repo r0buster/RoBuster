@@ -1,0 +1,2233 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>RoBuster - eraFEK Character Maker (V1)</title>
+        <link rel="stylesheet" href="css.css">
+        <meta charset="UTF-8">
+    </head>
+<body>
+        <div>
+            <center>
+            <h1>RoBuster</h1>
+                eraFEK / eratoho-k character creator<br>
+                Version 1<br><br>
+            <div>
+                <input type="text" id="txtID" placeholder="ID" required>
+            </div>
+            <div>
+                <input type="text" id="txtName" placeholder="First Name">
+            </div>
+            <div>
+                <input type="text" id="txtLastName" placeholder="Last Name (if applicable)">
+            </div>
+            <div>
+                <input type="text" id="txtNickName" placeholder="Nickname (Will be used instead of first name, can be left blank!)">
+            </div>
+            <div>
+                <select id="selSex">
+                    <option selected value="">-- Choose Sex --</option>
+                    <option value="0">Male</option>
+                    <option value="1">Female</option>
+                    <option value="2">Futanari ♀♂</option>
+                    <option value="3">Hermaphrodite ♂♀</option>
+                    <option value="4">Crossdresser ♂</option>
+                    <option value="5">Cross ♂♀</option>
+                </select>
+            </div>
+            <div>
+                <select id="selRace">
+                    <option selected value="">-- Choose Race --</option>
+                    <option value="Human">Human</option>
+                    <option value="Manakete">Manakete</option>
+                    <option value="Monster">Monster</option>
+                    <option value="Other">Other</option>
+                </select>
+            </div>
+
+            <div>
+                <select id="selGrowth-Type">
+                    <option selected value="">-- Choose Growth Type --</option>
+                    <option value="0">Dabbler (Fight・Defense・Strategy・Politics)</option>
+                    <option value="1">Tactician (Fight・Defense・Strategy)</option>
+                    <option value="2">Scholar (Strategy・Politics)</option>
+                    <option value="3">Leader (Fight・Defense・Politics)</option>
+                    <option value="4">Fighter (Fight・Defense)</option>
+                    <option value="5">Schemer (Strategy)</option>
+                    <option value="6">Official (Politics)</option>
+                    <option value="7">Entertainer (Singing)</option>
+                    <option value="8">Chef (Cooking)</option>
+                    <option value="9">Genius (All stats)</option>
+                    <option value="10">Idiot (Useless)</option>
+                </select>
+            </div><br>
+
+            <button class="collapsible"><b>STR | STA | WILL</b></button>
+            <div class="content">
+                <br>
+            <div class="column3">
+                <div class="slidecontainer">
+                    <input type="range" min="1000" max="3000" class="slider" id="sliderSTR" step="50">
+                    <p>STR: <span id="STRSlide"></span></p>
+                </div>
+
+                <script>
+                    var sliderSTR = document.getElementById("sliderSTR");
+                    var STRSlide = document.getElementById("STRSlide");
+                    STRSlide.innerHTML = sliderSTR.value;
+
+                    sliderSTR.oninput = function() {
+                    STRSlide.innerHTML = this.value;
+                    }
+                </script>
+
+                <div class="slidecontainer">
+                    <input type="range" min="1000" max="3000" class="slider" id="sliderSTA" step="50">
+                    <p>STA: <span id="STASlide"></span></p>
+                </div>
+
+                <script>
+                    var sliderSTA = document.getElementById("sliderSTA");
+                    var STASlide = document.getElementById("STASlide");
+                    STASlide.innerHTML = sliderSTA.value;
+                
+                    sliderSTA.oninput = function() {
+                    STASlide.innerHTML = this.value;
+                    }
+                </script>
+
+                <div class="slidecontainer">
+                    <input type="range" min="1000" max="3000" class="slider" id="sliderWILL" step="50">
+                    <p>WILL: <span id="WILLSlide"></span></p>
+                </div>
+
+                <script>
+                    var sliderWILL = document.getElementById("sliderWILL");
+                    var WILLSlide = document.getElementById("WILLSlide");
+                    WILLSlide.innerHTML = sliderWILL.value;
+
+                    sliderWILL.oninput = function() {
+                    WILLSlide.innerHTML = this.value;
+                    }
+                </script>
+
+            </div><br>
+            </div>
+            <br>
+            <button class="collapsible"><b>SLG Abilities</b></button>
+            <div class="content">
+                <br>
+            <div class="column4">
+                  <div class="slidecontainer">
+                      <input type="range" min="0" max="100" value="40" class="slider" id="sliderFight">
+                      <p>Fighting: <span id="FightSlide"></span></p>
+                  </div><br>
+
+                  <script>
+                      var sliderFight = document.getElementById("sliderFight");
+                      var FightSlide = document.getElementById("FightSlide");
+                      FightSlide.innerHTML = sliderFight.value;
+
+                      sliderFight.oninput = function() {
+                      FightSlide.innerHTML = this.value;
+                      }
+                  </script>
+
+
+                  <div class="slidecontainer">
+                      <input type="range" min="0" max="100" value="40" class="slider" id="sliderDef">
+                      <p>Defence: <span id="DefSlide"></span></p>
+                  </div><br>
+
+                  <script>
+                      var sliderDef = document.getElementById("sliderDef");
+                      var DefSlide = document.getElementById("DefSlide");
+                      DefSlide.innerHTML = sliderDef.value;
+
+                      sliderDef.oninput = function() {
+                      DefSlide.innerHTML = this.value;
+                      }
+                  </script>
+
+                  
+                <div class="slidecontainer">
+                    <input type="range" min="0" max="100" value="40" class="slider" id="sliderSTRAT">
+                    <p>Strategy: <span id="STRATSlide"></span></p>
+                </div><br>
+
+                <script>
+                    var sliderSTRAT = document.getElementById("sliderSTRAT");
+                    var STRATSlide = document.getElementById("STRATSlide");
+                    STRATSlide.innerHTML = sliderSTRAT.value;
+
+                    sliderSTRAT.oninput = function() {
+                    STRATSlide.innerHTML = this.value;
+                    }
+                </script>
+                
+                <div class="slidecontainer">
+                    <input type="range" min="0" max="100" value="40" class="slider" id="sliderPOL">
+                    <p>Politics: <span id="POLSlide"></span></p>
+                </div><br>
+
+                <script>
+                    var sliderPOL = document.getElementById("sliderPOL");
+                    var POLSlide = document.getElementById("POLSlide");
+                    POLSlide.innerHTML = sliderPOL.value;
+
+                    sliderPOL.oninput = function() {
+                    POLSlide.innerHTML = this.value;
+                    }
+                </script>
+                
+                <div class="slidecontainer">
+                    <input type="range" min="0" max="100" value="0" class="slider" id="sliderMAG">
+                    <p>Magic: <span id="MAGSlide"></span></p>
+                </div><br>
+
+                <script>
+                    var sliderMAG = document.getElementById("sliderMAG");
+                    var MAGSlide = document.getElementById("MAGSlide");
+                    MAGSlide.innerHTML = sliderMAG.value;
+
+                    sliderMAG.oninput = function() {
+                    MAGSlide.innerHTML = this.value;
+                    }
+                </script>
+
+                
+                <div class="slidecontainer">
+                    <input type="range" min="0" max="100" value="5" class="slider" id="sliderSING">
+                    <p>Singing: <span id="SINGSlide"></span></p>
+                </div><br>
+
+                <script>
+                    var sliderSING = document.getElementById("sliderSING");
+                    var SINGSlide = document.getElementById("SINGSlide");
+                    SINGSlide.innerHTML = sliderSING.value;
+
+                    sliderSING.oninput = function() {
+                    SINGSlide.innerHTML = this.value;
+                    }
+                </script>
+
+                
+                <div class="slidecontainer">
+                    <input type="range" min="0" max="100" value="10" class="slider" id="sliderCOOK">
+                    <p>Cooking: <span id="COOKSlide"></span></p>
+                </div><br>
+
+                <script>
+                    var sliderCOOK = document.getElementById("sliderCOOK");
+                    var COOKSlide = document.getElementById("COOKSlide");
+                    COOKSlide.innerHTML = sliderCOOK.value;
+
+                    sliderCOOK.oninput = function() {
+                    COOKSlide.innerHTML = this.value;
+                    }
+                </script>
+
+                <div class="slidecontainer">
+                    <input type="range" min="0" max="100" value="40" class="slider" id="sliderAMB">
+                    <p>Ambition: <span id="AMBSlide"></span></p>
+                </div><br>
+
+                <script>
+                    var sliderAMB = document.getElementById("sliderAMB");
+                    var AMBSlide = document.getElementById("AMBSlide");
+                    AMBSlide.innerHTML = sliderAMB.value;
+
+                    sliderAMB.oninput = function() {
+                    AMBSlide.innerHTML = this.value;
+                    }
+                </script>
+            </div>
+        </div>
+            <br>
+            <button class="collapsible"><b>Physical Traits</b></button>
+            <div class="content">            
+                <br>
+                <div class="column3">
+                
+                <label for="selVirgin" name="Virgin">Virgin</label>
+                <select id="selVirgin" size=3 name="Virgin">
+                    <option selected value="">Not a virgin</option>
+                    <option value="素質,処女,1">Virgin ♀</option>
+                    <option value="素質,童貞,1">Virgin ♂</option>
+                </select><br><br>
+
+                <label for="selAnalVirgin" name="AnalVirgin">Anal Virgin</label>
+                <select id="selAnalVirgin" size="2" name="AnalVirgin">
+                    <option value="">No</option>
+                    <option selected value="素質,アナル処女,1">Yes</option>
+                </select><br><br>
+
+                <label for="selNeverKissed" name="NeverKissed">First Kiss</label>
+                <select id="selNeverKissed" size="2" name="NeverKissed">
+                    <option value="">Has kissed</option>
+                    <option selected value="素質,キス未経験,1">Has not kissed</option>
+                </select><br>
+
+                <label for="selBodyType" name="BodyType">Body Size</label>
+                <select id="selBodyType" name="BodyType">
+                    <option value="素質,体格,-2">Childlike</option>
+                    <option value="素質,体格,-1">Petite</option>
+                    <option selected value="素質,体格,0">Average</option>
+                    <option value="素質,体格,1">Tall</option>
+                    <option value="素質,体格,2">Large</option>
+                    <option value="素質,体格,3">Giant</option>
+                </select><br><br>
+
+                <label for="selBodyShape" name="BodyShape">Body Shape</label>
+                <select id="selBodyShape" name="BodyShape">
+                    <option value="素質,体型,-3">Scrawny</option>
+                    <option value="素質,体型,-2">Thin</option>
+                    <option value="素質,体型,-1">Slender</option>
+                    <option selected value="素質,体型,0">Average</option>
+                    <option value="素質,体型,1">Voluptuous</option>
+                    <option value="素質,体型,2">Plump</option>
+                    <option value="素質,体型,3">Fat</option>
+                </select><br><br>
+
+                <label for="selBust-Size" name="Bust-Size">Bust Size (Ignore for male)</label>
+                <select id="selBust-Size" name="Bust-Size">
+                    <option selected value="素質,バストサイズ,-2">Flat</option>
+                    <option value="素質,バストサイズ,-1">Small</option>
+                    <option value="素質,バストサイズ,0">Average</option>
+                    <option value="素質,バストサイズ,1">Big</option>
+                    <option value="素質,バストサイズ,2">Huge</option>
+                </select><br><br>
+
+                <label for="selHip-Size" name="Hip-Size">Hip Size</label>
+                <select id="selHip-Size" name="Hip-Size">
+                    <option value="素質,ヒップサイズ,-2">Tiny</option>
+                    <option value="素質,ヒップサイズ,-1">Small</option>
+                    <option selected value="素質,ヒップサイズ,0">Average</option>
+                    <option value="素質,ヒップサイズ,1">Big</option>
+                    <option value="素質,ヒップサイズ,2">Huge</option>
+                </select><br><br>
+
+                <label for="selPenis-Size" name="Penis-Size">Penis Size (ignore for female)</label>
+                <select id="selPenis-Size" name="Penis-Size">
+                    <option selected value="">No penis</option>
+                    <option value="素質,ペニスサイズ,-2">Tiny</option>
+                    <option value="素質,ペニスサイズ,-1">Small</option>
+                    <option value="素質,ペニスサイズ,0">Average</option>
+                    <option value="素質,ペニスサイズ,1">Big</option>
+                    <option value="素質,ペニスサイズ,2">Huge</option>
+                </select><br><br>
+
+                <label for="selCurrent-Pubic-Hair" name="Current-Pubic-Hair">Pubic Hair</label>
+                <select id="selCurrent-Pubic-Hair" name="Current-Pubic-Hair">
+                    <option selected value="素質,陰毛現在値,0">Smooth</option>
+                    <option value="素質,陰毛現在値,1">Trimmed</option>
+                    <option value="素質,陰毛現在値,2">Short</option>
+                    <option value="素質,陰毛現在値,3">Fluffy</option>
+                    <option value="素質,陰毛現在値,4">Average</option>
+                    <option value="素質,陰毛現在値,5">Extra</option>
+                    <option value="素質,陰毛現在値,6">Bushy</option>
+                    <option value="素質,陰毛現在値,7">Unkempt</option>
+                    <option value="素質,陰毛現在値,8">Forest</option>
+                    <option value="素質,陰毛現在値,9">Reaches ass</option>
+                    <option value="素質,陰毛現在値,10">Heart Shaped</option>
+                </select><br><br>
+
+                <label for="selCurrent-Armpit-Hair" name="Current-Armpit-Hair">Armpit Hair</label>
+                <select id="selCurrent-Armpit-Hair" name="Current-Armpit-Hair">
+                    <option selected value="素質,腋毛現在値,0">Smooth</option>
+                    <option value="素質,腋毛現在値,1">Trimmed</option>
+                    <option value="素質,腋毛現在値,2">Short</option>
+                    <option value="素質,腋毛現在値,3">Fluffy</option>
+                    <option value="素質,腋毛現在値,4">Average</option>
+                    <option value="素質,腋毛現在値,5">Extra</option>
+                    <option value="素質,腋毛現在値,6">Bushy</option>
+                    <option value="素質,腋毛現在値,7">Unkempt</option>
+                    <option value="素質,腋毛現在値,8">Forest</option>
+                    <option value="素質,腋毛現在値,9">Jungle</option>
+                </select><br><br>
+
+                
+                <label for="selHairLength" name="HairLength">Hair Length</label>
+                <select id="selHairLength" name="HairLength">
+                    <option selected value="素質,髪の長さ,0">Unknown</option>
+                    <option value="素質,髪の長さ,1">Shaved</option>
+                    <option value="素質,髪の長さ,2">Very SHort</option>
+                    <option value="素質,髪の長さ,3">Short</option>
+                    <option value="素質,髪の長さ,4">Medium</option>
+                    <option value="素質,髪の長さ,5">Long</option>
+                    <option value="素質,髪の長さ,6">Very Long</option>
+                </select><br><br>
+                </div>
+                <br><br>
+                <div class="column6">
+                
+                <!-- Currently outputs the color with #, needs to be changed to 0x -->
+                <label for="selHairColor" name="HairColor">Hair color:</label><br>
+                <input type="color" id="selHairColor" name="HairColor" value="ff0000">
+                <br><br>
+
+           
+                    <div class="slidecontainer">
+                        <input type="range" min="50" max="1000" class="slider" id="sliderVTightness" value="700" step="50">
+                        <p>Vaginal Tightness: <span id="VTightnesSlide"></span></p>
+                    </div>
+    
+                    <script>
+                        var sliderVTightness = document.getElementById("sliderVTightness");
+                        var VTightnesSlide = document.getElementById("VTightnesSlide");
+                        VTightnesSlide.innerHTML = sliderVTightness.value;
+    
+                        sliderVTightness.oninput = function() {
+                        VTightnesSlide.innerHTML = this.value;
+                        }
+                    </script> <BR><BR>
+    
+                    <div class="slidecontainer">
+                        <input type="range" min="50" max="1000" class="slider" id="sliderATightness" value="700" step="50">
+                        <p>Anal Tightness: <span id="ATightnesSlide"></span></p>
+                    </div>
+
+                    <script>
+                        var sliderATightness = document.getElementById("sliderATightness");
+                        var ATightnesSlide = document.getElementById("ATightnesSlide");
+                        ATightnesSlide.innerHTML = sliderATightness.value;
+
+                        sliderATightness.oninput = function() {
+                        ATightnesSlide.innerHTML = this.value;
+                        }
+                    </script> <BR>
+ 
+                <label for="selDelicate" name="Delicate">Delicate</label>
+                <select id="selDelicate" size="2" name="Delicate">
+                    <option selected value="">No</option>
+                    <option value="素質,痛みに弱い,1">Yes</option>
+                </select><br><br>
+
+                <label for="selTough" name="Tough">Tough</label>
+                <select id="selTough" size="2" name="Tough">
+                    <option selected value="">No</option>
+                    <option value="素質,痛みに強い,1">Yes</option>
+                </select><br><br>
+
+                <label for="selGets-Wet-Easily" name="Gets-Wet-Easily">Gets-Wet-Easily</label>
+                <select id="selGets-Wet-Easily" size="2" name="Gets-Wet-Easily">
+                    <option selected value="">No</option>
+                    <option value="素質,濡れやすい,1">Yes</option>
+                </select><br><br>
+
+                <label for="selGets-Wet-Slowly" name="Gets-Wet-Slowly">Gets-Wet-Slowly</label>
+                <select id="selGets-Wet-Slowly" size="2" name="Gets-Wet-Slowly">
+                    <option selected value="">No</option>
+                    <option value="素質,濡れにくい,1">Yes</option>
+                </select><br><br>
+                                
+                <label for="selHealthy" name="Healthy">Healthy</label>
+                <select id="selHealthy" size="2" name="Healthy">
+                    <option selected value="">No</option>
+                    <option value="素質,回復早い,1">Yes</option>
+                </select><br><br>
+
+                <label for="selFrail" name="Frail">Frail</label>
+                <select id="selFrail" size="2" name="Frail">
+                    <option selected value="">No</option>
+                    <option value="素質,回復遅い,1">Yes</option>
+                </select><br><br>
+
+                <label for="selNice-Legs" name="Nice-Legs">Nice-Legs</label>
+                <select id="selNice-Legs" size="2" name="Nice-Legs">
+                    <option selected value="">No</option>
+                    <option value="素質,美脚,1">Yes</option>
+                </select><br><br>
+
+                <label for="selNice-Butt" name="Nice-Butt">Nice-Butt</label>
+                <select id="selNice-Butt" size="2" name="Nice-Butt">
+                    <option selected value="">No</option>
+                    <option value="素質,美尻,1">Yes</option>
+                </select><br><br>
+                
+                <label for="selLactating" name="Lactating">Lactating</label>
+                <select id="selLactating" size="2" name="Lactating">
+                    <option selected value="">No</option>
+                    <option value="素質,母乳体質,1">Yes</option>
+                </select><br><br>
+
+                <label for="selSkilled-Tongue" name="Skilled-Tongue">Skilled-Tongue</label>
+                <select id="selSkilled-Tongue" size="2" name="Skilled-Tongue">
+                    <option selected value="">No</option>
+                    <option value="素質,舌使い,1">Yes</option>
+                </select><br><br>
+
+                <label for="selWeak-Bladder" name="Weak-Bladder">Weak-Bladder</label>
+                <select id="selWeak-Bladder" size="2" name="Weak-Bladder">
+                    <option selected value="">No</option>
+                    <option value="素質,おもらし癖,1">Yes</option>
+                </select><br><br>
+                
+                <label for="selStrong-Stomach" name="Strong-Stomach">Strong-Stomach</label>
+                <select id="selStrong-Stomach" size="2" name="Strong-Stomach">
+                    <option selected value="">No</option>
+                    <option value="素質,汚れ無視,1">Yes</option>
+                </select><br><br>
+                
+
+                <label for="selChilds-Body" name="Childs-Body">Childs-Body</label>
+                <select id="selChilds-Body" size="2" name="Childs-Body">
+                    <option selected value="">No</option>
+                    <option value="素質,子供体型,1">Yes</option>
+                </select><br><br>
+
+                <label for="selAnimal-Ears" name="Animal-Ears">Animal-Ears</label>
+                <select id="selAnimal-Ears" size="2" name="Animal-Ears">
+                    <option selected value="">No</option>
+                    <option value="素質,動物耳,1">Yes</option>
+                </select><br><br>
+
+                <label for="selTail" name="Tail">Tail</label>
+                <select id="selTail" size="2" name="Tail">
+                    <option selected value="">No</option>
+                    <option value="素質,しっぽ,1">Yes</option>
+                </select><br><br>  
+
+            </div>
+            </div><br>
+
+
+            <button class="collapsible"><b>Sensitivities</b></button>
+            <div class="content">
+                <br>
+            <div class="column7"> 
+                <label for="selSmell-Sensitive" name="Smell-Sensitive">Smell-Sensitive</label>
+                <select id="selSmell-Sensitive" size="2" name="Smell-Sensitive">
+                    <option selected value="">No</option>
+                    <option value="素質,汚臭敏感,1">Yes</option>
+                </select><br><br>
+                
+                <label for="selSmell-Tolerant" name="Smell-Tolerant">Smell-Tolerant</label>
+                <select id="selSmell-Tolerant" size="2" name="Smell-Tolerant">
+                    <option selected value="">No</option>
+                    <option value="素質,汚臭鈍感,1">Yes</option>
+                </select><br><br>
+
+                <label for="selC-Insensitive" name="C-Insensitive">C-Insensitive</label>
+                <select id="selC-Insensitive" size="2" name="C-Insensitive">
+                    <option selected value="">No</option>
+                    <option value="素質,Ｃ鈍感,1">Yes</option>
+                </select><br><br>
+
+                <label for="selC-Sensitive" name="C-Sensitive">C-Sensitive</label>
+                <select id="selC-Sensitive" size="2" name="C-Sensitive">
+                    <option selected value="">No</option>
+                    <option value="素質,Ｃ敏感,1">Yes</option>
+                </select><br><br>
+
+                <label for="selV-Insensitive" name="V-Insensitive">V-Insensitive</label>
+                <select id="selV-Insensitive" size="2" name="V-Insensitive">
+                    <option selected value="">No</option>
+                    <option value="素質,Ｖ鈍感,1">Yes</option>
+                </select><br><br>
+
+                <label for="selV-Sensitive" name="V-Sensitive">V-Sensitive</label>
+                <select id="selV-Sensitive" size="2" name="V-Sensitive">
+                    <option selected value="">No</option>
+                    <option value="素質,Ｖ敏感,1">Yes</option>
+                </select><br><br>
+
+                <label for="selA-Insensitive" name="A-Insensitive">A-Insensitive</label>
+                <select id="selA-Insensitive" size="2" name="A-Insensitive">
+                    <option selected value="">No</option>
+                    <option value="素質,Ａ鈍感,1">Yes</option>
+                </select><br><br>
+
+                <label for="selA-Sensitive" name="A-Sensitive">A-Sensitive</label>
+                <select id="selA-Sensitive" size="2" name="A-Sensitive">
+                    <option selected value="">No</option>
+                    <option value="素質,Ａ敏感,1">Yes</option>
+                </select><br><br>
+
+                <label for="selB-Insensitive" name="B-Insensitive">B-Insensitive</label>
+                <select id="selB-Insensitive" size="2" name="B-Insensitive">
+                    <option selected value="">No</option>
+                    <option value="素質,Ｂ鈍感,1">Yes</option>
+                </select><br><br>
+
+                <label for="selB-Sensitive" name="B-Sensitive">B-Sensitive</label>
+                <select id="selB-Sensitive" size="2" name="B-Sensitive">
+                    <option selected value="">No</option>
+                    <option value="素質,Ｂ敏感,1">Yes</option>
+                </select><br><br>
+
+                <label for="selM-Insensitive" name="M-Insensitive">M-Insensitive</label>
+                <select id="selM-Insensitive" size="2" name="M-Insensitive">
+                    <option selected value="">No</option>
+                    <option value="素質,Ｍ鈍感,1">Yes</option>
+                </select><br><br>
+
+                <label for="selM-Sensitive" name="M-Sensitive">M-Sensitive</label>
+                <select id="selM-Sensitive" size="2" name="M-Sensitive">
+                    <option selected value="">No</option>
+                    <option value="素質,Ｍ敏感,1">Yes</option>
+                </select><br><br>
+
+                <label for="selU-Insensitive" name="U-Insensitive">U-Insensitive</label>
+                <select id="selU-Insensitive" size="2" name="U-Insensitive">
+                    <option selected value="">No</option>
+                    <option value="素質,Ｕ鈍感,1">Yes</option>
+                </select><br><br>
+
+                <label for="selU-Sensitive" name="U-Sensitive">U-Sensitive</label>
+                <select id="selU-Sensitive" size="2" name="U-Sensitive">
+                    <option selected value="">No</option>
+                    <option value="素質,Ｕ敏感,1">Yes</option>
+                </select><br><br>
+
+            </div>
+            </div>
+
+
+            <br>
+            <button class="collapsible"><b>Mind Traits</b></button>
+            <div class="content">
+                <br>
+            <div class="column4"><b>
+                <label for="selTimid" name="Timid">Self-confidence</label>
+                <select id="selTimid" name="Timid">
+                    <option selected value="">No trait</option>
+                    <option value="素質,臆病,1">Timid</option>                    
+                    <option value="素質,反抗的,1">Defiant</option>
+                </select><br><br>
+                              
+                <label for="selDocile" name="Docile">Impressionable</label>
+                <select id="selDocile" name="Docile">
+                    <option selected value="">No trait</option>
+                    <option value="素質,大人しい,1">Docile</option>
+                    <option value="素質,素直,1">Stubborn</option>
+                </select><br><br>
+                
+                <label for="selQuiet" name="Quiet">Boldness</label>
+                <select id="selQuiet" name="Quiet">
+                    <option selected value="">No Trait</option>
+                    <option value="素質,大人しい,1">Quiet</option>
+                    <option value="素質,生意気,1">Sassy</option>
+                </select><br><br>
+                
+                <label for="selHumble" name="Humble">Humble / Prideful</label>
+                <select id="selHumble" name="Humble">
+                    <option selected value="">No</option>
+                    <option value="素質,プライド低い,1">Humble</option>
+                    <option value="素質,ツンデレ,1">Prideful</option>
+                </select><br><br>
+
+                <label for="selCurious" name="Curious">Desire to try new things</label>
+                <select id="selCurious" name="Curious">
+                    <option selected value="">No</option>
+                    <option value="素質,好奇心,1">Curious</option>
+                    <option value="素質,保守的,1">Conservative</option>
+                </select><br><br>
+               
+                <label for="selOptimistic" name="Optimistic">Outlook on things</label>
+                <select id="selOptimistic" name="Optimistic">
+                    <option selected value="">No</option>
+                    <option value="素質,悲観的,1">Pessimistic</option>
+                    <option value="素質,楽観的,1">Optimistic</option>
+                </select><br><br>
+                                
+                <label for="selReserved" name="Reserved">Reserved / Showo-ff</label>
+                <select id="selReserved" name="Reserved">
+                    <option selected value="">No</option>
+                    <option value="素質,一線越えない,1">Reserved</option>
+                    <option value="素質,目立ちたがり,1">Show-off</option>
+                </select><br><br> 
+                
+                <label for="selRepressed" name="Repressed">Repressed / Liberated</label>
+                <select id="selRepressed" name="Repressed">
+                    <option selected value="">No</option>
+                    <option value="素質,抑圧,1">Repressed</option>
+                    <option value="素質,解放,1">Liberated</option>
+                </select><br><br>
+
+                <label for="selQuick-witted" name="Quick-witted">Wits</label>
+                <select id="selQuick-witted" name="Quick-witted">
+                    <option selected value="">No</option>
+                    <option value="素質,習得遅い,1">Dim-witted</option>
+                    <option value="素質,習得早い,1">Quick-witted</option>
+                </select><br><br>
+                
+                <label for="selSelf-conscious" name="Self-conscious">Enjoys or revels pleasure?</label>
+                <select id="selSelf-conscious" name="Self-conscious">
+                    <option selected value="">No</option>
+                    <option value="素質,快感に素直,1">Uninhibited</option>
+                    <option value="素質,快感の否定,1">Self-conscious</option>
+                </select><br><br>
+                
+                <label for="selNon-drinker" name="Non-drinker">Heavy or non-drinker</label>
+                <select id="selNon-drinker" name="Non-drinker">
+                    <option selected value="">No trait</option>
+                    <option value="素質,下戸,1">Non-dinker</option>
+                    <option value="素質,酒豪,1">Heavy Drinker</option>
+                </select><br><br>
+            </div>
+            <br><br>
+            <div class="column6"><b>               
+                <label for="selVirtuous" name="Virtuous">Virtuous</label>
+                <select id="selVirtuous" size="2" name="Virtuous">
+                    <option selected value="">No</option>
+                    <option value="素質,一線越えない,1">Yes</option>
+                </select><br><br>
+
+                <label for="selTsundere" name="Tsundere">Tsundere</label>
+                <select id="selTsundere" size="2" name="Tsundere">
+                    <option selected value="">No</option>
+                    <option value="素質,ツンデレ,1">Yes</option>
+                </select><br><br>
+
+                <label for="selAloof" name="Aloof">Aloof</label>
+                <select id="selAloof" size="2" name="Aloof">
+                    <option selected value="">No</option>
+                    <option value="素質,孤高,1">Yes</option>
+                </select><br><br>
+
+                <label for="selShy" name="Shy">Shy</label>
+                <select id="selShy" size="2" name="Shy">
+                    <option selected value="">No</option>
+                    <option value="素質,恥じらい,1">Yes</option>
+                </select><br><br>
+
+                <label for="selShameless" name="Shameless">Shameless</label>
+                <select id="selShameless" size="2" name="Shameless">
+                    <option selected value="">No</option>
+                    <option value="素質,恥薄い,1">Yes</option>
+                </select><br><br>
+                
+                <label for="selComposed" name="Composed">Composed</label>
+                <select id="selComposed" size="2" name="Composed">
+                    <option selected value="">No</option>
+                    <option value="素質,自制心,1">Yes</option>
+                </select><br><br>
+                
+                <label for="selImpassive" name="Impassive">Impassive</label>
+                <select id="selImpassive" size="2" name="Impassive">
+                    <option selected value="">No</option>
+                    <option value="素質,感情乏しい,1">Yes</option>
+                </select><br><br>
+
+                <label for="selApathetic" name="Apathetic">Apathetic</label>
+                <select id="selApathetic" size="2" name="Apathetic">
+                    <option selected value="">No</option>
+                    <option value="素質,無関心,1">Yes</option>
+                </select><br><br>
+                
+                <label for="selLazy" name="Lazy">Lazy</label>
+                <select id="selLazy" size="2" name="Lazy">
+                    <option selected value="">No</option>
+                    <option value="素質,サボり魔,1">Yes</option>
+                </select><br><br>
+
+                <label for="selMasturbator" name="Masturbator">Masturbator</label>
+                <select id="selMasturbator" size="2" name="Masturbator">
+                    <option selected value="">No</option>
+                    <option value="素質,自慰しやすい,1">Yes</option>
+                </select><br><br>
+
+                <label for="selDevoted" name="Devoted">Devoted</label>
+                <select id="selDevoted" size="2" name="Devoted">
+                    <option selected value="">No</option>
+                    <option value="素質,献身的,1">Yes</option>
+                </select><br><br>
+
+                <label for="selCorruptible" name="Corruptible">Corruptible</label>
+                <select id="selCorruptible" size="2" name="Corruptible">
+                    <option selected value="">No</option>
+                    <option value="素質,中毒しやすい,1">Yes</option>
+                </select><br><br>
+
+                <label for="selPerverted" name="Perverted">Perverted</label>
+                <select id="selPerverted" size="2" name="Perverted">
+                    <option selected value="">No</option>
+                    <option value="素質,倒錯的,1">Yes</option>
+                </select><br><br>
+
+                <label for="selBisexual" name="Bisexual">Bisexual</label>
+                <select id="selBisexual" size="2" name="Bisexual">
+                    <option selected value="">No</option>
+                    <option value="素質,両刀,1">Yes</option>
+                </select><br><br>
+
+                <label for="selAndrophobic" name="Androphobic">Androphobic</label>
+                <select id="selAndrophobic" size="2" name="Androphobic">
+                    <option selected value="">No</option>
+                    <option value="素質,男嫌い,1">Yes</option>
+                </select><br><br>
+
+                <label for="selGynophobic" name="Gynophobic">Gynophobic</label>
+                <select id="selGynophobic" size="2" name="Gynophobic">
+                    <option selected value="">No</option>
+                    <option value="素質,女嫌い,1">Yes</option>
+                </select><br><br>
+
+                <label for="selAbusive" name="Abusive">Abusive</label>
+                <select id="selAbusive" size="2" name="Abusive">
+                    <option selected value="">No</option>
+                    <option value="素質,Ｓ気質,1">Yes</option>
+                </select><br><br>
+
+                <label for="selEnjoys-Abuse" name="Enjoys-Abuse">Enjoys-Abuse</label>
+                <select id="selEnjoys-Abuse" size="2" name="Enjoys-Abuse">
+                    <option selected value="">No</option>
+                    <option value="素質,Ｍ気質,1">Yes</option>
+                </select><br><br>
+
+                <label for="selImpish" name="Impish">Impish</label>
+                <select id="selImpish" size="2" name="Impish">
+                    <option selected value="">No</option>
+                    <option value="素質,小悪魔,1">Yes</option>
+                </select><br><br>
+
+                <label for="selCharming" name="Charming">Charming</label>
+                <select id="selCharming" size="2" name="Charming">
+                    <option selected value="">No</option>
+                    <option value="素質,魅惑,1">Yes</option>
+                </select><br><br>
+
+                <label for="selEnchanting" name="Enchanting">Enchanting</label>
+                <select id="selEnchanting" size="2" name="Enchanting">
+                    <option selected value="">No</option>
+                    <option value="素質,謎の魅力,1">Yes</option>
+                </select><br><br>
+
+                <label for="selPopular" name="Popular">Popular</label>
+                <select id="selPopular" size="2" name="Popular">
+                    <option selected value="">No</option>
+                    <option value="素質,人気,1">Yes</option>
+                </select><br><br>
+
+                <label for="selChilds-Mind" name="Childs-Mind">Childs-Mind</label>
+                <select id="selChilds-Mind" size="2" name="Childs-Mind">
+                    <option selected value="">No</option>
+                    <option value="素質,幼稚,1">Yes</option>
+                </select><br><br>
+
+                <label for="selInsatiable" name="Insatiable">Insatiable</label>
+                <select id="selInsatiable" size="2" name="Insatiable">
+                    <option selected value="">No</option>
+                    <option value="素質,絶倫,1">Yes</option>
+                </select><br><br>
+
+                <label for="selProvidence" name="Providence">Providence</label>
+                <select id="selProvidence" size="2" name="Providence">
+                    <option selected value="">No</option>
+                    <option value="素質,天の御遣い,1">Yes</option>
+                </select><br><br>
+                
+                <label for="selWitchcraft" name="Witchcraft">Witchcraft (needed for magic)</label>
+                <select id="selWitchcraft" size="2" name="Witchcraft">
+                    <option selected value="">No</option>
+                    <option value="素質,妖術知識,1">Yes</option>
+                </select><br><br>
+                
+                <label for="selEngineer" name="Engineer">Engineer</label>
+                <select id="selEngineer" size="2" name="Engineer">
+                    <option selected value="">No</option>
+                    <option value="素質,技師,1">Yes</option>
+                </select><br><br>
+                
+                <label for="selLordly" name="Lordly">Lordly</label>
+                <select id="selLordly" size="2" name="Lordly">
+                    <option selected value="">No</option>
+                    <option value="素質,君主の器,1">Yes</option>
+                </select><br><br>
+                
+                <label for="selDependable" name="Dependable">Dependable</label>
+                <select id="selDependable" size="2" name="Dependable">
+                    <option selected value="">No</option>
+                    <option value="素質,求心力,1">Yes</option>
+                </select><br><br>
+                
+                <label for="selLucky" name="Lucky">Lucky</label>
+                <select id="selLucky" size="2" name="Lucky">
+                    <option selected value="">No</option>
+                    <option value="素質,強運,1">Yes</option>
+                </select><br><br>
+                
+                <label for="selReversed-Names" name="Reversed-Names">Reversed Names</label>
+                <select id="selReversed-Names" size="2" name="Reversed-Names">
+                    <option selected value="">No</option>
+                    <option value="素質,姓名逆転,1">Yes</option>
+                </select><br><br>
+            </div>
+            <br>
+            <div class="column3">
+                <div class="slidecontainer">
+                    <input type="range" min="0" max="1000" value="0" class="slider" id="sliderPerversion" step="50">
+                    <p>Perversion: <span id="PerversionSlide"></span></p>
+                </div>
+
+                <script>
+                    var sliderPerversion = document.getElementById("sliderPerversion");
+                    var PerversionSlide = document.getElementById("PerversionSlide");
+                    PerversionSlide.innerHTML = sliderPerversion.value;
+
+                    sliderPerversion.oninput = function() {
+                    PerversionSlide.innerHTML = this.value;
+                    }
+                </script> <BR>
+                    
+                <div class="slidecontainer">
+                    <input type="range" min="-1000" max="1000" class="slider" id="sliderAssertiveDaily" step="50">
+                    <p>Assertive Daily (allow to be empty): <span id="AssertiveDailySlide"></span></p>
+                </div>
+
+                <script>
+                    var sliderAssertiveDaily = document.getElementById("sliderAssertiveDaily");
+                    var AssertiveDailySlide = document.getElementById("AssertiveDailySlide");
+                    AssertiveDailySlide.innerHTML = sliderAssertiveDaily.value;
+
+                    sliderAssertiveDaily.oninput = function() {
+                    AssertiveDailySlide.innerHTML = this.value;
+                    }
+                </script> <BR>
+                    
+                <div class="slidecontainer">
+                    <input type="range" min="-1000" max="1000" class="slider" id="sliderAssertiveSexual" step="50">
+                    <p>Assertive Sexual: <span id="AssertiveSexualSlide"></span></p>
+                </div>
+
+                <script>
+                    var sliderAssertiveSexual = document.getElementById("sliderAssertiveSexual");
+                    var AssertiveSexualSlide = document.getElementById("AssertiveSexualSlide");
+                    AssertiveSexualSlide.innerHTML = sliderAssertiveSexual.value;
+
+                    sliderAssertiveSexual.oninput = function() {
+                    AssertiveSexualSlide.innerHTML = this.value;
+                    }
+                </script> <BR>
+
+            </b>
+            </div>
+        </div>   
+
+            <br>
+            <button class="collapsible"><b>Sex Traits / ABL</b></button>
+            <div class="content"><br>          
+                <div class="column4">             
+                    <label for="selSexual-Preference" name="Sexual-Preference">Preferred Sexual Activity</label>
+                    <select id="selSexual-Preference" name="Sexual-Preference">
+                        <option selected value="">-- Choose Preferred Sexual Activity --</option>
+                        <option value="素質,性的嗜好,0">Caressing</option>
+                        <option value="素質,性的嗜好,1">Servicing</option>
+                        <option value="素質,性的嗜好,2">Fucking</option>
+                        <option value="素質,性的嗜好,3">Using toys</option>
+                        <option value="素質,性的嗜好,4">Punishing</option>
+                        <option value="素質,性的嗜好,5">Humiliating</option>
+                        <option value="素質,性的嗜好,6">Using tentacles</option>
+                        <option value="素質,性的嗜好,7">Being caressed</option>
+                        <option value="素質,性的嗜好,8">Being serviced</option>
+                        <option value="素質,性的嗜好,9">Being fucked</option>
+                        <option value="素質,性的嗜好,10">Toys</option>
+                        <option value="素質,性的嗜好,11">Being punished</option>
+                        <option value="素質,性的嗜好,12">Being humiliated</option>
+                        <option value="素質,性的嗜好,13">Tentacles</option>
+                        <option value="素質,性的嗜好,14">Being bound</option>
+                        <option value="素質,性的嗜好,15">Bestiality</option>
+                        <option value="素質,性的嗜好,16">Exposure</option>
+                        <option value="素質,性的嗜好,17">Being hypnotized</option>
+                        <option value="素質,性的嗜好,18">Whoring</option>
+                        <option value="素質,性的嗜好,19">Being recorded</option>
+                        <option value="素質,性的嗜好,20">Getting dirty</option>
+                        <option value="素質,性的嗜好,21">Being trained</option>
+                        <option value="素質,性的嗜好,22">Being gangbanged</option>
+                        <option value="素質,性的嗜好,23">Getting pregnant</option>
+                        <option value="素質,性的嗜好,24">Incest</option>
+                        <option value="素質,性的嗜好,25">Homosexuality</option>
+                    </select><br><br>
+                    
+                    <!-- Might be re-enabled once I figure out wtf this does
+                        <label for="selSexual-Preference-Lock" name="Sexual-Preference-Lock">Sexual Preference Lock</label>
+                    <select id="selSexual-Preference-Lock" size="2" name="Sexual-Preference-Lock">
+                        <option selected value="">No</option>
+                        <option value="素質,性的嗜好ロック,1">Yes</option>
+                    </select><br><br> -->
+
+                    <label for="selSexKnow">Sex knowledge:</label> 
+                        <select id="selSexKnow" name="SexKnow">
+                        <option value="">Ignorant</option>
+                        <option value="能力,性知識,1">Innocent</option>
+                        <option value="能力,性知識,2">Beginner</option>
+                        <option value="能力,性知識,3">Average</option>
+                        <option value="能力,性知識,4">Teacher</option>
+                        <option value="能力,性知識,5">Sage</option>
+                    </select><br><br>
+                
+                    <label for="selDesire">Desire:</label> 
+                        <select id="selDesire" name="Desire">
+                        <option value="">G</option>
+                        <option value="能力,欲望,1">F</option>
+                        <option value="能力,欲望,2">E</option>
+                        <option value="能力,欲望,3">D</option>
+                        <option value="能力,欲望,4">C</option>
+                        <option value="能力,欲望,6">B</option>
+                        <option value="能力,欲望,8">A</option>
+                        <option value="能力,欲望,10">S</option>
+                    </select><br><br>
+
+                    <label for="selService">Service:</label> 
+                        <select id="selService" name="Service">
+                        <option value="">G</option>
+                        <option value="能力,奉仕,1">F</option>
+                        <option value="能力,奉仕,2">E</option>
+                        <option value="能力,奉仕,3">D</option>
+                        <option value="能力,奉仕,4">C</option>
+                        <option value="能力,奉仕,6">B</option>
+                        <option value="能力,奉仕,8">A</option>
+                        <option value="能力,奉仕,10">S</option>
+                    </select><br><br>
+
+                    <label for="selSexing">Sexing:</label> 
+                        <select id="selSexing" name="Sexing">
+                        <option value="">G</option>
+                        <option value="能力,性交,1">F</option>
+                        <option value="能力,性交,2">E</option>
+                        <option value="能力,性交,3">D</option>
+                        <option value="能力,性交,4">C</option>
+                        <option value="能力,性交,6">B</option>
+                        <option value="能力,性交,8">A</option>
+                        <option value="能力,性交,10">S</option>
+                    </select><br><br>
+
+                    <label for="selLesbian">Lesbian:</label> 
+                        <select id="selLesbian" name="Lesbian">
+                        <option value="">G</option>
+                        <option value="能力,レズ,1">F</option>
+                        <option value="能力,レズ,2">E</option>
+                        <option value="能力,レズ,3">D</option>
+                        <option value="能力,レズ,4">C</option>
+                        <option value="能力,レズ,6">B</option>
+                        <option value="能力,レズ,8">A</option>
+                        <option value="能力,レズ,10">S</option>
+                    </select><br><br>
+
+                    <label for="selBL">BL:</label> 
+                        <select id="selBL" name="BL">
+                        <option value="">G</option>
+                        <option value="能力,ＢＬ,1">F</option>
+                        <option value="能力,ＢＬ,2">E</option>
+                        <option value="能力,ＢＬ,3">D</option>
+                        <option value="能力,ＢＬ,4">C</option>
+                        <option value="能力,ＢＬ,6">B</option>
+                        <option value="能力,ＢＬ,8">A</option>
+                        <option value="能力,ＢＬ,10">S</option>
+                    </select><br><br>
+
+                    <label for="selExposure">Exposure:</label> 
+                        <select id="selExposure" name="Exposure">
+                        <option value="">G</option>
+                        <option value="能力,露出,1">F</option>
+                        <option value="能力,露出,2">E</option>
+                        <option value="能力,露出,3">D</option>
+                        <option value="能力,露出,4">C</option>
+                        <option value="能力,露出,6">B</option>
+                        <option value="能力,露出,8">A</option>
+                        <option value="能力,露出,10">S</option>
+                    </select><br><br>
+
+                    <label for="selMasturbation">Masturbation:</label> 
+                        <select id="selMasturbation" name="Masturbation">
+                        <option value="">G</option>
+                        <option value="能力,自慰,1">F</option>
+                        <option value="能力,自慰,2">E</option>
+                        <option value="能力,自慰,3">D</option>
+                        <option value="能力,自慰,4">C</option>
+                        <option value="能力,自慰,6">B</option>
+                        <option value="能力,自慰,8">A</option>
+                        <option value="能力,自慰,10">S</option>
+                    </select><br><br>
+
+                    <label for="selCumLove">CumLove:</label> 
+                        <select id="selCumLove" name="CumLove">
+                        <option value="">G</option>
+                        <option value="能力,精愛,1">F</option>
+                        <option value="能力,精愛,2">E</option>
+                        <option value="能力,精愛,3">D</option>
+                        <option value="能力,精愛,4">C</option>
+                        <option value="能力,精愛,6">B</option>
+                        <option value="能力,精愛,8">A</option>
+                        <option value="能力,精愛,10">S</option>
+                    </select><br><br>
+
+                    <label for="selEjaculation">Ejaculation:</label> 
+                        <select id="selEjaculation" name="Ejaculation">
+                        <option value="">G</option>
+                        <option value="能力,射精,1">F</option>
+                        <option value="能力,射精,2">E</option>
+                        <option value="能力,射精,3">D</option>
+                        <option value="能力,射精,4">C</option>
+                        <option value="能力,射精,6">B</option>
+                        <option value="能力,射精,8">A</option>
+                        <option value="能力,射精,10">S</option>
+                    </select><br><br>
+
+                    <label for="selLactation">Lactation:</label> 
+                        <select id="selLactation" name="Lactation">
+                        <option value="">G</option>
+                        <option value="能力,噴乳,1">F</option>
+                        <option value="能力,噴乳,2">E</option>
+                        <option value="能力,噴乳,3">D</option>
+                        <option value="能力,噴乳,4">C</option>
+                        <option value="能力,噴乳,6">B</option>
+                        <option value="能力,噴乳,8">A</option>
+                        <option value="能力,噴乳,10">S</option>
+                    </select><br><br>
+
+                    <label for="selUrination">Urination:</label> 
+                        <select id="selUrination" name="Urination">
+                        <option value="">G</option>
+                        <option value="能力,排泄,1">F</option>
+                        <option value="能力,排泄,2">E</option>
+                        <option value="能力,排泄,3">D</option>
+                        <option value="能力,排泄,4">C</option>
+                        <option value="能力,排泄,6">B</option>
+                        <option value="能力,排泄,8">A</option>
+                        <option value="能力,排泄,10">S</option>
+                    </select><br><br>
+
+                    <label for="selTentacle">Tentacle:</label> 
+                        <select id="selTentacle" name="Tentacle">
+                        <option value="">G</option>
+                        <option value="能力,触手,1">F</option>
+                        <option value="能力,触手,2">E</option>
+                        <option value="能力,触手,3">D</option>
+                        <option value="能力,触手,4">C</option>
+                        <option value="能力,触手,6">B</option>
+                        <option value="能力,触手,8">A</option>
+                        <option value="能力,触手,10">S</option>
+                    </select><br><br>
+
+                    <label for="selBirthing">Birthing:</label> 
+                        <select id="selBirthing" name="Birthing">
+                        <option value="">G</option>
+                        <option value="能力,出産,1">F</option>
+                        <option value="能力,出産,2">E</option>
+                        <option value="能力,出産,3">D</option>
+                        <option value="能力,出産,4">C</option>
+                        <option value="能力,出産,6">B</option>
+                        <option value="能力,出産,8">A</option>
+                        <option value="能力,出産,10">S</option>
+                    </select><br><br>
+
+                    <label for="selDrinking">Drinking:</label> 
+                        <select id="selDrinking" name="Drinking">
+                        <option value="">G</option>
+                        <option value="能力,肝臓,1">F</option>
+                        <option value="能力,肝臓,2">E</option>
+                        <option value="能力,肝臓,3">D</option>
+                        <option value="能力,肝臓,4">C</option>
+                        <option value="能力,肝臓,6">B</option>
+                        <option value="能力,肝臓,8">A</option>
+                        <option value="能力,肝臓,10">S</option>
+                    </select><br><br>
+
+                    <label for="selMasochism">Masochism:</label> 
+                        <select id="selMasochism" name="Masochism">
+                        <option value="">G</option>
+                        <option value="能力,マゾ,1">F</option>
+                        <option value="能力,マゾ,2">E</option>
+                        <option value="能力,マゾ,3">D</option>
+                        <option value="能力,マゾ,4">C</option>
+                        <option value="能力,マゾ,6">B</option>
+                        <option value="能力,マゾ,8">A</option>
+                        <option value="能力,マゾ,10">S</option>
+                    </select><br><br>
+
+                    <label for="selSadism">Sadism:</label> 
+                        <select id="selSadism" name="Sadism">
+                        <option value="">G</option>
+                        <option value="能力,サド,1">F</option>
+                        <option value="能力,サド,2">E</option>
+                        <option value="能力,サド,3">D</option>
+                        <option value="能力,サド,4">C</option>
+                        <option value="能力,サド,6">B</option>
+                        <option value="能力,サド,8">A</option>
+                        <option value="能力,サド,10">S</option>
+                    </select><br><br>
+
+                    <label for="selHypnotism">Hypnotism:</label> 
+                        <select id="selHypnotism" name="Hypnotism">
+                        <option value="">G</option>
+                        <option value="能力,催眠,1">F</option>
+                        <option value="能力,催眠,2">E</option>
+                        <option value="能力,催眠,3">D</option>
+                        <option value="能力,催眠,4">C</option>
+                        <option value="能力,催眠,6">B</option>
+                        <option value="能力,催眠,8">A</option>
+                        <option value="能力,催眠,10">S</option>
+                    </select><br><br>
+                </div>  
+            </div>
+
+            <br>
+            <button class="collapsible"><b>Experiences</b></button>
+            <div class="content"><br>       
+                <h3>Enable Experience?</h3><br>
+                Ignore these if you don't know what experience does. If you enable it and change nothing you just get a big piece of useless data in your sheet.<br>
+                <form>
+                    <input type="radio" id="exp_off" name="enable_exp" value="0" checked>
+                    <label for="off">Off</label> 
+                    <input type="radio" id="exp_on" name="enable_exp" value="1">
+                    <label for="on">On</label><br>
+                  </form> 
+                  <br><br>
+                <div class="column6">
+
+                    <div class="slidecontainer">
+                        <input type="range" min="0" max="100" class="slider" value="0" id="sliderServiceExp">
+                        <p>Service EXP: <span id="ServiceExpSlide"></span></p>
+                    </div>
+    
+                    <script>
+                        var sliderServiceExp = document.getElementById("sliderServiceExp");
+                        var ServiceExpSlide = document.getElementById("ServiceExpSlide");
+                        ServiceExpSlide.innerHTML = sliderServiceExp.value;
+    
+                        sliderServiceExp.oninput = function() {
+                        ServiceExpSlide.innerHTML = this.value;
+                        }
+                    </script> <BR>
+
+                    <div class="slidecontainer">
+                        <input type="range" min="0" max="100" class="slider" value="0" id="sliderFuckExp">
+                        <p>FuckExp: <span id="FuckExpSlide"></span></p>
+                    </div>
+
+                    <script>
+                        var sliderFuckExp = document.getElementById("sliderFuckExp");
+                        var FuckExpSlide = document.getElementById("FuckExpSlide");
+                        FuckExpSlide.innerHTML = sliderFuckExp.value;
+
+                        sliderFuckExp.oninput = function() {
+                        FuckExpSlide.innerHTML = this.value;
+                        }
+                    </script> <BR>
+
+                    <div class="slidecontainer">
+                        <input type="range" min="0" max="100" class="slider" value="0" id="sliderImpregExp">
+                        <p>ImpregExp: <span id="ImpregExpSlide"></span></p>
+                    </div>
+
+                    <script>
+                        var sliderImpregExp = document.getElementById("sliderImpregExp");
+                        var ImpregExpSlide = document.getElementById("ImpregExpSlide");
+                        ImpregExpSlide.innerHTML = sliderImpregExp.value;
+
+                        sliderImpregExp.oninput = function() {
+                        ImpregExpSlide.innerHTML = this.value;
+                        }
+                    </script> <BR>
+
+                    <div class="slidecontainer">
+                        <input type="range" min="0" max="100" class="slider" value="0" id="sliderPregnancyExp">
+                        <p>PregnancyExp: <span id="PregnancyExpSlide"></span></p>
+                    </div>
+
+                    <script>
+                        var sliderPregnancyExp = document.getElementById("sliderPregnancyExp");
+                        var PregnancyExpSlide = document.getElementById("PregnancyExpSlide");
+                        PregnancyExpSlide.innerHTML = sliderPregnancyExp.value;
+
+                        sliderPregnancyExp.oninput = function() {
+                        PregnancyExpSlide.innerHTML = this.value;
+                        }
+                    </script> <BR>
+
+                    <div class="slidecontainer">
+                        <input type="range" min="0" max="100" class="slider" value="0" id="sliderLesbianExp">
+                        <p>LesbianExp: <span id="LesbianExpSlide"></span></p>
+                    </div>
+
+                    <script>
+                        var sliderLesbianExp = document.getElementById("sliderLesbianExp");
+                        var LesbianExpSlide = document.getElementById("LesbianExpSlide");
+                        LesbianExpSlide.innerHTML = sliderLesbianExp.value;
+
+                        sliderLesbianExp.oninput = function() {
+                        LesbianExpSlide.innerHTML = this.value;
+                        }
+                    </script> <BR>
+
+                    <div class="slidecontainer">
+                        <input type="range" min="0" max="100" class="slider" value="0" id="sliderBoyLoveExp">
+                        <p>BoyLoveExp: <span id="BoyLoveExpSlide"></span></p>
+                    </div>
+                    
+                    <script>
+                        var sliderBoyLoveExp = document.getElementById("sliderBoyLoveExp");
+                        var BoyLoveExpSlide = document.getElementById("BoyLoveExpSlide");
+                        BoyLoveExpSlide.innerHTML = sliderBoyLoveExp.value;
+                    
+                        sliderBoyLoveExp.oninput = function() {
+                        BoyLoveExpSlide.innerHTML = this.value;
+                        }
+                    </script> <BR>
+                    
+                    <div class="slidecontainer">
+                        <input type="range" min="0" max="100" class="slider" value="0" id="sliderExposureExp">
+                        <p>ExposureExp: <span id="ExposureExpSlide"></span></p>
+                    </div>
+                    
+                    <script>
+                        var sliderExposureExp = document.getElementById("sliderExposureExp");
+                        var ExposureExpSlide = document.getElementById("ExposureExpSlide");
+                        ExposureExpSlide.innerHTML = sliderExposureExp.value;
+                    
+                        sliderExposureExp.oninput = function() {
+                        ExposureExpSlide.innerHTML = this.value;
+                        }
+                    </script> <BR>
+                    
+                    <div class="slidecontainer">
+                        <input type="range" min="0" max="100" class="slider" value="0" id="sliderMasturbateExp">
+                        <p>MasturbateExp: <span id="MasturbateExpSlide"></span></p>
+                    </div>
+
+                    <script>
+                        var sliderMasturbateExp = document.getElementById("sliderMasturbateExp");
+                        var MasturbateExpSlide = document.getElementById("MasturbateExpSlide");
+                        MasturbateExpSlide.innerHTML = sliderMasturbateExp.value;
+
+                        sliderMasturbateExp.oninput = function() {
+                        MasturbateExpSlide.innerHTML = this.value;
+                        }
+                    </script> <BR>
+
+                    <div class="slidecontainer">
+                        <input type="range" min="0" max="100" class="slider" value="0" id="sliderCumLoveExp">
+                        <p>CumLoveExp: <span id="CumLoveExpSlide"></span></p>
+                    </div>
+
+                    <script>
+                        var sliderCumLoveExp = document.getElementById("sliderCumLoveExp");
+                        var CumLoveExpSlide = document.getElementById("CumLoveExpSlide");
+                        CumLoveExpSlide.innerHTML = sliderCumLoveExp.value;
+
+                        sliderCumLoveExp.oninput = function() {
+                        CumLoveExpSlide.innerHTML = this.value;
+                        }
+                    </script> <BR>
+
+                    <div class="slidecontainer">
+                        <input type="range" min="0" max="100" class="slider" value="0" id="sliderEjaculateExp">
+                        <p>EjaculateExp: <span id="EjaculateExpSlide"></span></p>
+                    </div>
+
+                    <script>
+                        var sliderEjaculateExp = document.getElementById("sliderEjaculateExp");
+                        var EjaculateExpSlide = document.getElementById("EjaculateExpSlide");
+                        EjaculateExpSlide.innerHTML = sliderEjaculateExp.value;
+
+                        sliderEjaculateExp.oninput = function() {
+                        EjaculateExpSlide.innerHTML = this.value;
+                        }
+                    </script> <BR>
+
+                    <div class="slidecontainer">
+                        <input type="range" min="0" max="100" class="slider" value="0" id="sliderLactationExp">
+                        <p>LactationExp: <span id="LactationExpSlide"></span></p>
+                    </div>
+
+                    <script>
+                        var sliderLactationExp = document.getElementById("sliderLactationExp");
+                        var LactationExpSlide = document.getElementById("LactationExpSlide");
+                        LactationExpSlide.innerHTML = sliderLactationExp.value;
+
+                        sliderLactationExp.oninput = function() {
+                        LactationExpSlide.innerHTML = this.value;
+                        }
+                    </script> <BR>
+
+
+                    <div class="slidecontainer">
+                        <input type="range" min="0" max="100" class="slider" value="0" id="sliderDrinkingExp">
+                        <p>DrinkingExp: <span id="DrinkingExpSlide"></span></p>
+                    </div>
+
+                    <script>
+                        var sliderDrinkingExp = document.getElementById("sliderDrinkingExp");
+                        var DrinkingExpSlide = document.getElementById("DrinkingExpSlide");
+                        DrinkingExpSlide.innerHTML = sliderDrinkingExp.value;
+
+                        sliderDrinkingExp.oninput = function() {
+                        DrinkingExpSlide.innerHTML = this.value;
+                        }
+                    </script> <BR>
+
+                    <div class="slidecontainer">
+                        <input type="range" min="0" max="100" class="slider" value="0" id="sliderSadismExp">
+                        <p>SadismExp: <span id="SadismExpSlide"></span></p>
+                    </div>
+
+                    <script>
+                        var sliderSadismExp = document.getElementById("sliderSadismExp");
+                        var SadismExpSlide = document.getElementById("SadismExpSlide");
+                        SadismExpSlide.innerHTML = sliderSadismExp.value;
+
+                        sliderSadismExp.oninput = function() {
+                        SadismExpSlide.innerHTML = this.value;
+                        }
+                    </script> <BR>
+                    
+                    <div class="slidecontainer">
+                        <input type="range" min="0" max="100" class="slider" value="0" id="sliderPainExp">
+                        <p>PainExp: <span id="PainExpSlide"></span></p>
+                    </div>
+                    
+                    <script>
+                        var sliderPainExp = document.getElementById("sliderPainExp");
+                        var PainExpSlide = document.getElementById("PainExpSlide");
+                        PainExpSlide.innerHTML = sliderPainExp.value;
+                    
+                        sliderPainExp.oninput = function() {
+                        PainExpSlide.innerHTML = this.value;
+                        }
+                    </script> <BR>
+
+                    <div class="slidecontainer">
+                        <input type="range" min="0" max="100" class="slider" value="0" id="sliderSexTechExp">
+                        <p>SexTechExp: <span id="SexTechExpSlide"></span></p>
+                    </div>
+                    
+                    <script>
+                        var sliderSexTechExp = document.getElementById("sliderSexTechExp");
+                        var SexTechExpSlide = document.getElementById("SexTechExpSlide");
+                        SexTechExpSlide.innerHTML = sliderSexTechExp.value;
+                    
+                        sliderSexTechExp.oninput = function() {
+                        SexTechExpSlide.innerHTML = this.value;
+                        }
+                    </script> <BR>
+
+                    <div class="slidecontainer">
+                        <input type="range" min="0" max="100" class="slider" value="0" id="sliderDesireExp">
+                        <p>DesireExp: <span id="DesireExpSlide"></span></p>
+                    </div>
+                    
+                    <script>
+                        var sliderDesireExp = document.getElementById("sliderDesireExp");
+                        var DesireExpSlide = document.getElementById("DesireExpSlide");
+                        DesireExpSlide.innerHTML = sliderDesireExp.value;
+                    
+                        sliderDesireExp.oninput = function() {
+                        DesireExpSlide.innerHTML = this.value;
+                        }
+                    </script> <BR>
+
+                    <div class="slidecontainer">
+                        <input type="range" min="0" max="100" class="slider" value="0" id="sliderOrgasmExp">
+                        <p>OrgasmExp: <span id="OrgasmExpSlide"></span></p>
+                    </div>
+                    
+                    <script>
+                        var sliderOrgasmExp = document.getElementById("sliderOrgasmExp");
+                        var OrgasmExpSlide = document.getElementById("OrgasmExpSlide");
+                        OrgasmExpSlide.innerHTML = sliderOrgasmExp.value;
+                    
+                        sliderOrgasmExp.oninput = function() {
+                        OrgasmExpSlide.innerHTML = this.value;
+                        }
+                    </script> <BR>
+
+                    <div class="slidecontainer">
+                        <input type="range" min="0" max="100" class="slider" value="0" id="sliderMasochismExp">
+                        <p>MasochismExp: <span id="MasochismExpSlide"></span></p>
+                    </div>
+                    
+                    <script>
+                        var sliderMasochismExp = document.getElementById("sliderMasochismExp");
+                        var MasochismExpSlide = document.getElementById("MasochismExpSlide");
+                        MasochismExpSlide.innerHTML = sliderMasochismExp.value;
+                    
+                        sliderMasochismExp.oninput = function() {
+                        MasochismExpSlide.innerHTML = this.value;
+                        }
+                    </script> <BR>
+
+                    <div class="slidecontainer">
+                        <input type="range" min="0" max="100" class="slider" value="0" id="sliderVStretchExp">
+                        <p>VStretchExp: <span id="VStretchExpSlide"></span></p>
+                    </div>
+                    
+                    <script>
+                        var sliderVStretchExp = document.getElementById("sliderVStretchExp");
+                        var VStretchExpSlide = document.getElementById("VStretchExpSlide");
+                        VStretchExpSlide.innerHTML = sliderVStretchExp.value;
+                    
+                        sliderVStretchExp.oninput = function() {
+                        VStretchExpSlide.innerHTML = this.value;
+                        }
+                    </script> <BR>
+
+                    <div class="slidecontainer">
+                        <input type="range" min="0" max="100" class="slider" value="0" id="sliderAStretchExp">
+                        <p>AStretchExp: <span id="AStretchExpSlide"></span></p>
+                    </div>
+                    
+                    <script>
+                        var sliderAStretchExp = document.getElementById("sliderAStretchExp");
+                        var AStretchExpSlide = document.getElementById("AStretchExpSlide");
+                        AStretchExpSlide.innerHTML = sliderAStretchExp.value;
+                    
+                        sliderAStretchExp.oninput = function() {
+                        AStretchExpSlide.innerHTML = this.value;
+                        }
+                    </script> <BR>
+
+                    <div class="slidecontainer">
+                        <input type="range" min="0" max="100" class="slider" value="0" id="sliderBondageExp">
+                        <p>BondageExp: <span id="BondageExpSlide"></span></p>
+                    </div>
+                    
+                    <script>
+                        var sliderBondageExp = document.getElementById("sliderBondageExp");
+                        var BondageExpSlide = document.getElementById("BondageExpSlide");
+                        BondageExpSlide.innerHTML = sliderBondageExp.value;
+                    
+                        sliderBondageExp.oninput = function() {
+                        BondageExpSlide.innerHTML = this.value;
+                        }
+                    </script> <BR>
+
+                    <div class="slidecontainer">
+                        <input type="range" min="0" max="100" class="slider" value="0" id="sliderVCreampieExp">
+                        <p>VCreampieExp: <span id="VCreampieExpSlide"></span></p>
+                    </div>
+                    
+                    <script>
+                        var sliderVCreampieExp = document.getElementById("sliderVCreampieExp");
+                        var VCreampieExpSlide = document.getElementById("VCreampieExpSlide");
+                        VCreampieExpSlide.innerHTML = sliderVCreampieExp.value;
+                    
+                        sliderVCreampieExp.oninput = function() {
+                        VCreampieExpSlide.innerHTML = this.value;
+                        }
+                    </script> <BR>
+
+                    <div class="slidecontainer">
+                        <input type="range" min="0" max="100" class="slider" value="0" id="sliderACreampieExp">
+                        <p>ACreampieExp: <span id="ACreampieExpSlide"></span></p>
+                    </div>
+                    
+                    <script>
+                        var sliderACreampieExp = document.getElementById("sliderACreampieExp");
+                        var ACreampieExpSlide = document.getElementById("ACreampieExpSlide");
+                        ACreampieExpSlide.innerHTML = sliderACreampieExp.value;
+                    
+                        sliderACreampieExp.oninput = function() {
+                        ACreampieExpSlide.innerHTML = this.value;
+                        }
+                    </script> <BR>
+
+                    <div class="slidecontainer">
+                        <input type="range" min="0" max="100" class="slider" value="0" id="sliderSwallowingExp">
+                        <p>SwallowingExp: <span id="SwallowingExpSlide"></span></p>
+                    </div>
+                    
+                    <script>
+                        var sliderSwallowingExp = document.getElementById("sliderSwallowingExp");
+                        var SwallowingExpSlide = document.getElementById("SwallowingExpSlide");
+                        SwallowingExpSlide.innerHTML = sliderSwallowingExp.value;
+                    
+                        sliderSwallowingExp.oninput = function() {
+                        SwallowingExpSlide.innerHTML = this.value;
+                        }
+                    </script> <BR>
+
+                    <div class="slidecontainer">
+                        <input type="range" min="0" max="100" class="slider" value="0" id="sliderUTrainingExp">
+                        <p>UTrainingExp: <span id="UTrainingExpSlide"></span></p>
+                    </div>
+                    
+                    <script>
+                        var sliderUTrainingExp = document.getElementById("sliderUTrainingExp");
+                        var UTrainingExpSlide = document.getElementById("UTrainingExpSlide");
+                        UTrainingExpSlide.innerHTML = sliderUTrainingExp.value;
+                    
+                        sliderUTrainingExp.oninput = function() {
+                        UTrainingExpSlide.innerHTML = this.value;
+                        }
+                    </script> <BR>
+
+                    <div class="slidecontainer">
+                        <input type="range" min="0" max="100" class="slider" value="0" id="sliderDatingExp">
+                        <p>DatingExp: <span id="DatingExpSlide"></span></p>
+                    </div>
+                    
+                    <script>
+                        var sliderDatingExp = document.getElementById("sliderDatingExp");
+                        var DatingExpSlide = document.getElementById("DatingExpSlide");
+                        DatingExpSlide.innerHTML = sliderDatingExp.value;
+                    
+                        sliderDatingExp.oninput = function() {
+                        DatingExpSlide.innerHTML = this.value;
+                        }
+                    </script> <BR>
+
+                    <div class="slidecontainer">
+                        <input type="range" min="0" max="100" class="slider" value="0" id="sliderKissingExp">
+                        <p>KissingExp: <span id="KissingExpSlide"></span></p>
+                    </div>
+                    
+                    <script>
+                        var sliderKissingExp = document.getElementById("sliderKissingExp");
+                        var KissingExpSlide = document.getElementById("KissingExpSlide");
+                        KissingExpSlide.innerHTML = sliderKissingExp.value;
+                    
+                        sliderKissingExp.oninput = function() {
+                        KissingExpSlide.innerHTML = this.value;
+                        }
+                    </script> <BR>
+
+                    <div class="slidecontainer">
+                        <input type="range" min="0" max="100" class="slider" value="0" id="sliderOralExp">
+                        <p>OralExp: <span id="OralExpSlide"></span></p>
+                    </div>
+                    
+                    <script>
+                        var sliderOralExp = document.getElementById("sliderOralExp");
+                        var OralExpSlide = document.getElementById("OralExpSlide");
+                        OralExpSlide.innerHTML = sliderOralExp.value;
+                    
+                        sliderOralExp.oninput = function() {
+                        OralExpSlide.innerHTML = this.value;
+                        }
+                    </script> <BR>
+                </div>
+                <div class="column6">
+                    <div class="slidecontainer">
+                        <input type="range" min="0" max="100" class="slider" value="0" id="sliderNTRExp">
+                        <p>NTRExp: <span id="NTRExpSlide"></span></p>
+                    </div>
+                    
+                    <script>
+                        var sliderNTRExp = document.getElementById("sliderNTRExp");
+                        var NTRExpSlide = document.getElementById("NTRExpSlide");
+                        NTRExpSlide.innerHTML = sliderNTRExp.value;
+                    
+                        sliderNTRExp.oninput = function() {
+                        NTRExpSlide.innerHTML = this.value;
+                        }
+                    </script> <BR>
+
+                    <div class="slidecontainer">
+                        <input type="range" min="0" max="100" class="slider" value="0" id="sliderUrinationExp">
+                        <p>UrinationExp: <span id="UrinationExpSlide"></span></p>
+                    </div>
+                    
+                    <script>
+                        var sliderUrinationExp = document.getElementById("sliderUrinationExp");
+                        var UrinationExpSlide = document.getElementById("UrinationExpSlide");
+                        UrinationExpSlide.innerHTML = sliderUrinationExp.value;
+                    
+                        sliderUrinationExp.oninput = function() {
+                        UrinationExpSlide.innerHTML = this.value;
+                        }
+                    </script> <BR>
+
+                    <div class="slidecontainer">
+                        <input type="range" min="0" max="100" class="slider" value="0" id="sliderTraumaticExp">
+                        <p>TraumaticExp: <span id="TraumaticExpSlide"></span></p>
+                    </div>
+                    
+                    <script>
+                        var sliderTraumaticExp = document.getElementById("sliderTraumaticExp");
+                        var TraumaticExpSlide = document.getElementById("TraumaticExpSlide");
+                        TraumaticExpSlide.innerHTML = sliderTraumaticExp.value;
+                    
+                        sliderTraumaticExp.oninput = function() {
+                        TraumaticExpSlide.innerHTML = this.value;
+                        }
+                    </script> <BR>
+
+                    <div class="slidecontainer">
+                        <input type="range" min="0" max="100" class="slider" value="0" id="sliderBirthsExp">
+                        <p>BirthsExp: <span id="BirthsExpSlide"></span></p>
+                    </div>
+                    
+                    <script>
+                        var sliderBirthsExp = document.getElementById("sliderBirthsExp");
+                        var BirthsExpSlide = document.getElementById("BirthsExpSlide");
+                        BirthsExpSlide.innerHTML = sliderBirthsExp.value;
+                    
+                        sliderBirthsExp.oninput = function() {
+                        BirthsExpSlide.innerHTML = this.value;
+                        }
+                    </script> <BR>
+
+
+                    <div class="slidecontainer">
+                        <input type="range" min="0" max="100" class="slider" value="0" id="sliderNightcrawlExp">
+                        <p>NightcrawlExp: <span id="NightcrawlExpSlide"></span></p>
+                    </div>
+                    
+                    <script>
+                        var sliderNightcrawlExp = document.getElementById("sliderNightcrawlExp");
+                        var NightcrawlExpSlide = document.getElementById("NightcrawlExpSlide");
+                        NightcrawlExpSlide.innerHTML = sliderNightcrawlExp.value;
+                    
+                        sliderNightcrawlExp.oninput = function() {
+                        NightcrawlExpSlide.innerHTML = this.value;
+                        }
+                    </script> <BR>
+
+                    <div class="slidecontainer">
+                        <input type="range" min="0" max="100" class="slider" value="0" id="sliderAbnormalExp">
+                        <p>AbnormalExp: <span id="AbnormalExpSlide"></span></p>
+                    </div>
+                    
+                    <script>
+                        var sliderAbnormalExp = document.getElementById("sliderAbnormalExp");
+                        var AbnormalExpSlide = document.getElementById("AbnormalExpSlide");
+                        AbnormalExpSlide.innerHTML = sliderAbnormalExp.value;
+                    
+                        sliderAbnormalExp.oninput = function() {
+                        AbnormalExpSlide.innerHTML = this.value;
+                        }
+                    </script> <BR>
+
+                    <div class="slidecontainer">
+                        <input type="range" min="0" max="100" class="slider" value="0" id="sliderGangbangExp">
+                        <p>GangbangExp: <span id="GangbangExpSlide"></span></p>
+                    </div>
+                    
+                    <script>
+                        var sliderGangbangExp = document.getElementById("sliderGangbangExp");
+                        var GangbangExpSlide = document.getElementById("GangbangExpSlide");
+                        GangbangExpSlide.innerHTML = sliderGangbangExp.value;
+                    
+                        sliderGangbangExp.oninput = function() {
+                        GangbangExpSlide.innerHTML = this.value;
+                        }
+                    </script> <BR>
+
+                    <div class="slidecontainer">
+                        <input type="range" min="0" max="100" class="slider" value="0" id="sliderBeastExp">
+                        <p>BeastExp: <span id="BeastExpSlide"></span></p>
+                    </div>
+                    
+                    <script>
+                        var sliderBeastExp = document.getElementById("sliderBeastExp");
+                        var BeastExpSlide = document.getElementById("BeastExpSlide");
+                        BeastExpSlide.innerHTML = sliderBeastExp.value;
+                    
+                        sliderBeastExp.oninput = function() {
+                        BeastExpSlide.innerHTML = this.value;
+                        }
+                    </script> <BR>
+
+                    <div class="slidecontainer">
+                        <input type="range" min="0" max="100" class="slider" value="0" id="sliderWhoringExp">
+                        <p>WhoringExp: <span id="WhoringExpSlide"></span></p>
+                    </div>
+                    
+                    <script>
+                        var sliderWhoringExp = document.getElementById("sliderWhoringExp");
+                        var WhoringExpSlide = document.getElementById("WhoringExpSlide");
+                        WhoringExpSlide.innerHTML = sliderWhoringExp.value;
+                    
+                        sliderWhoringExp.oninput = function() {
+                        WhoringExpSlide.innerHTML = this.value;
+                        }
+                    </script> <BR>
+
+                    <div class="slidecontainer">
+                        <input type="range" min="0" max="100" class="slider" value="0" id="sliderPornExp">
+                        <p>PornExp: <span id="PornExpSlide"></span></p>
+                    </div>
+                    
+                    <script>
+                        var sliderPornExp = document.getElementById("sliderPornExp");
+                        var PornExpSlide = document.getElementById("PornExpSlide");
+                        PornExpSlide.innerHTML = sliderPornExp.value;
+                    
+                        sliderPornExp.oninput = function() {
+                        PornExpSlide.innerHTML = this.value;
+                        }
+                    </script> <BR>
+
+                    <div class="slidecontainer">
+                        <input type="range" min="0" max="100" class="slider" value="0" id="sliderIncestExp">
+                        <p>IncestExp: <span id="IncestExpSlide"></span></p>
+                    </div>
+                    
+                    <script>
+                        var sliderIncestExp = document.getElementById("sliderIncestExp");
+                        var IncestExpSlide = document.getElementById("IncestExpSlide");
+                        IncestExpSlide.innerHTML = sliderIncestExp.value;
+                    
+                        sliderIncestExp.oninput = function() {
+                        IncestExpSlide.innerHTML = this.value;
+                        }
+                    </script> <BR>
+
+                    <div class="slidecontainer">
+                        <input type="range" min="0" max="100" class="slider" value="0" id="sliderHypnotizedExp">
+                        <p>HypnotizedExp: <span id="HypnotizedExpSlide"></span></p>
+                    </div>
+                    
+                    <script>
+                        var sliderHypnotizedExp = document.getElementById("sliderHypnotizedExp");
+                        var HypnotizedExpSlide = document.getElementById("HypnotizedExpSlide");
+                        HypnotizedExpSlide.innerHTML = sliderHypnotizedExp.value;
+                    
+                        sliderHypnotizedExp.oninput = function() {
+                        HypnotizedExpSlide.innerHTML = this.value;
+                        }
+                    </script> <BR>
+
+                    <div class="slidecontainer">
+                        <input type="range" min="0" max="100" class="slider" value="0" id="sliderHypnogasmExp">
+                        <p>HypnogasmExp: <span id="HypnogasmExpSlide"></span></p>
+                    </div>
+                    
+                    <script>
+                        var sliderHypnogasmExp = document.getElementById("sliderHypnogasmExp");
+                        var HypnogasmExpSlide = document.getElementById("HypnogasmExpSlide");
+                        HypnogasmExpSlide.innerHTML = sliderHypnogasmExp.value;
+                    
+                        sliderHypnogasmExp.oninput = function() {
+                        HypnogasmExpSlide.innerHTML = this.value;
+                        }
+                        
+                    </script> <BR>
+
+                    <div class="slidecontainer">
+                        <input type="range" min="0" max="100" class="slider" value="0" id="sliderHypnoticExp">
+                        <p>HypnoticExp: <span id="HypnoticExpSlide"></span></p>
+                    </div>
+
+                    <script>
+                        var sliderHypnoticExp = document.getElementById("sliderHypnoticExp");
+                        var HypnoticExpSlide = document.getElementById("HypnoticExpSlide");
+                        HypnoticExpSlide.innerHTML = sliderHypnoticExp.value;
+
+                        sliderHypnoticExp.oninput = function() {
+                        HypnoticExpSlide.innerHTML = this.value;
+                        }
+                    </script> <BR>
+
+                    <div class="slidecontainer">
+                        <input type="range" min="0" max="100" class="slider" value="0" id="sliderScatExp">
+                        <p>ScatExp: <span id="ScatExpSlide"></span></p>
+                    </div>
+
+                    <script>
+                        var sliderScatExp = document.getElementById("sliderScatExp");
+                        var ScatExpSlide = document.getElementById("ScatExpSlide");
+                        ScatExpSlide.innerHTML = sliderScatExp.value;
+
+                        sliderScatExp.oninput = function() {
+                        ScatExpSlide.innerHTML = this.value;
+                        }
+                    </script> <BR>
+
+                    <div class="slidecontainer">
+                        <input type="range" min="0" max="100" class="slider" value="0" id="sliderTentacleExp">
+                        <p>TentacleExp: <span id="TentacleExpSlide"></span></p>
+                    </div>
+
+                    <script>
+                        var sliderTentacleExp = document.getElementById("sliderTentacleExp");
+                        var TentacleExpSlide = document.getElementById("TentacleExpSlide");
+                        TentacleExpSlide.innerHTML = sliderTentacleExp.value;
+
+                        sliderTentacleExp.oninput = function() {
+                        TentacleExpSlide.innerHTML = this.value;
+                        }
+                    </script> <BR>
+
+                    <div class="slidecontainer">
+                        <input type="range" min="0" max="100" class="slider" value="0" id="sliderTBirthExp">
+                        <p>TBirthExp: <span id="TBirthExpSlide"></span></p>
+                    </div>
+
+                    <script>
+                        var sliderTBirthExp = document.getElementById("sliderTBirthExp");
+                        var TBirthExpSlide = document.getElementById("TBirthExpSlide");
+                        TBirthExpSlide.innerHTML = sliderTBirthExp.value;
+
+                        sliderTBirthExp.oninput = function() {
+                        TBirthExpSlide.innerHTML = this.value;
+                        }
+                    </script> <BR>
+
+                </div>
+            </div>
+
+            <div>
+                <textarea id="msg" name="msg" placeholder="Insert any comments you have (if any), if you had some specific idea in mind while creating a character. NO ENTERS!" style="height:100px"></textarea>
+            </div>
+            <div>
+                <input type="button" id="bt" value="Save data to file" onclick="saveFile()">
+            </div>
+            <br><br>
+            Special thanks to the /egg/ discord
+        </center>
+    </div>
+
+    <script>
+        //Collapse the divs
+        var coll = document.getElementsByClassName("collapsible");
+        var i;
+        
+        for (i = 0; i < coll.length; i++) {
+          coll[i].addEventListener("click", function() {
+            this.classList.toggle("active");
+            var content = this.nextElementSibling;
+            if (content.style.maxHeight){
+              content.style.maxHeight = null;
+            } else {
+              content.style.maxHeight = content.scrollHeight + "px";
+            } 
+          });
+        }
+        
+    </script>
+    
+</body>
+    <script>
+        let saveFile = () => {
+            
+            // Get the data from each element on the form.
+            const name = document.getElementById('txtName');
+            const lname = document.getElementById('txtLastName');
+            const id = document.getElementById('txtID');
+            const nickname = document.getElementById('txtNickName');
+            const sex = document.getElementById('selSex');
+            const race = document.getElementById('selRace');
+            const growthtype = document.getElementById('selGrowth-Type');
+
+            //SLG
+            const str = document.getElementById('sliderSTR');
+            const sta = document.getElementById('sliderSTA');
+            const will = document.getElementById('sliderWILL');
+            const fight = document.getElementById('sliderFight');
+            const def = document.getElementById('sliderDef');
+            const strat = document.getElementById('sliderSTRAT');
+            const pol = document.getElementById('sliderPOL');
+            const mag = document.getElementById('sliderMAG');
+            const sing = document.getElementById('sliderSING');
+            const cook = document.getElementById('sliderCOOK');
+            const amb = document.getElementById('sliderAMB');
+
+            //Physical Traits
+            const virgin = document.getElementById('selVirgin');
+            const neverkissed = document.getElementById('selNeverKissed');
+            const cinsensitive = document.getElementById('selC-Insensitive');
+            const csensitive = document.getElementById('selC-Sensitive');
+            const vinsensitive = document.getElementById('selV-Insensitive');
+            const vsensitive = document.getElementById('selV-Sensitive');
+            const ainsensitive = document.getElementById('selA-Insensitive');
+            const asensitive = document.getElementById('selA-Sensitive');
+            const binsensitive = document.getElementById('selB-Insensitive');
+            const bsensitive = document.getElementById('selB-Sensitive');
+            const minsensitive = document.getElementById('selM-Insensitive');
+            const msensitive = document.getElementById('selM-Sensitive');
+            const smelltolerant = document.getElementById('selSmell-Tolerant');
+            const smellsensitive = document.getElementById('selSmell-Sensitive');
+            const getsweteasily = document.getElementById('selGets-Wet-Easily');
+            const getswetslowly = document.getElementById('selGets-Wet-Slowly');
+            const strongstomach = document.getElementById('selStrong-Stomach');
+            const skilledtongue = document.getElementById('selSkilled-Tongue');
+            const weakbladder = document.getElementById('selWeak-Bladder');
+            const healthy = document.getElementById('selHealthy');
+            const frail = document.getElementById('selFrail');
+            const nicelegs = document.getElementById('selNice-Legs');
+            const nicebutt = document.getElementById('selNice-Butt');
+            const uinsensitive = document.getElementById('selU-Insensitive');
+            const usensitive = document.getElementById('selU-Sensitive');
+            const lactating = document.getElementById('selLactating');
+            const childsbody = document.getElementById('selChilds-Body');
+            const animalears = document.getElementById('selAnimal-Ears');
+            const tail = document.getElementById('selTail');
+            const haircolor = document.getElementById('selHairColor');
+            const hairlength = document.getElementById('selHairLength');
+            const vtightness = document.getElementById('sliderVTightness');
+            const atightness = document.getElementById('sliderATightness');
+            const currentarmpithair = document.getElementById('selCurrent-Armpit-Hair');
+            const bustsize = document.getElementById('selBust-Size');
+            const penissize = document.getElementById('selPenis-Size');
+            const hipsize = document.getElementById('selHip-Size');
+            const bodytype = document.getElementById('selBodyType');
+            //const piercingholes = document.getElementById('selPiercing-holes');
+            //const piercings = document.getElementById('selPiercings');
+            const currentpubichair = document.getElementById('selCurrent-Pubic-Hair');
+            const perversion = document.getElementById('sliderPerversion');
+            const assertived = document.getElementById('sliderAssertiveDaily');
+            const assertives = document.getElementById('sliderAssertiveSexual');
+
+            //Add piercings!!
+
+            //Mind Traits
+            const timid = document.getElementById('selTimid');
+            const docile = document.getElementById('selDocile');
+            const quiet = document.getElementById('selQuiet');
+            const humble = document.getElementById('selHumble');
+            const composed = document.getElementById('selComposed');
+            const apathetic = document.getElementById('selApathetic');
+            const impassive = document.getElementById('selImpassive');
+            const curious = document.getElementById('selCurious');
+            const optimistic = document.getElementById('selOptimistic');
+            const reserved = document.getElementById('selReserved');
+            const virtuous = document.getElementById('selVirtuous');
+            const tsundere = document.getElementById('selTsundere');
+            const repressed = document.getElementById('selRepressed');
+            const aloof = document.getElementById('selAloof');
+            const shy = document.getElementById('selShy');
+            const shameless = document.getElementById('selShameless');
+            const lazy = document.getElementById('selLazy');
+            const delicate = document.getElementById('selDelicate');
+            const tough = document.getElementById('selTough');
+            const quickwitted = document.getElementById('selQuick-witted');
+            const masturbator = document.getElementById('selMasturbator');
+            const devoted = document.getElementById('selDevoted');
+            const selfconscious = document.getElementById('selSelf-conscious');
+            const corruptible = document.getElementById('selCorruptible');
+            const perverted = document.getElementById('selPerverted');
+            const bisexual = document.getElementById('selBisexual');
+            const androphobic = document.getElementById('selAndrophobic');
+            const gynophobic = document.getElementById('selGynophobic');
+            const abusive = document.getElementById('selAbusive');
+            const enjoysabuse = document.getElementById('selEnjoys-Abuse');
+            const impish = document.getElementById('selImpish');
+            const charming = document.getElementById('selCharming');
+            const enchanting = document.getElementById('selEnchanting');
+            const popular = document.getElementById('selPopular');
+            const childsmind = document.getElementById('selChilds-Mind');
+            const heavydrinker = document.getElementById('selHeavy-Drinker');
+            const insatiable = document.getElementById('selInsatiable');
+            const nondrinker = document.getElementById('selNon-drinker');
+            const providence = document.getElementById('selProvidence');
+            const witchcraft = document.getElementById('selWitchcraft');
+            const engineer = document.getElementById('selEngineer');
+            const lordly = document.getElementById('selLordly');
+            const dependable = document.getElementById('selDependable');
+            const lucky = document.getElementById('selLucky');
+            const reversednames = document.getElementById('selReversed-Names');
+            const sexualpreference = document.getElementById('selSexual-Preference');
+            //const sexualpreferencelock = document.getElementById('selSexual-Preference-Lock');
+
+            //ABL
+            const sexknow = document.getElementById('selSexKnow');
+            const desire = document.getElementById('selDesire');
+            const birthing = document.getElementById('selBirthing');
+            const bl = document.getElementById('selBL');
+            const cumlove = document.getElementById('selCumLove');
+            const drinking = document.getElementById('selDrinking');
+            const ejaculation = document.getElementById('selEjaculation');
+            const exposure = document.getElementById('selExposure');
+            const hypnotism = document.getElementById('selHypnotism');
+            const lactation = document.getElementById('selLactation');
+            const lesbian = document.getElementById('selLesbian');
+            const masochism = document.getElementById('selMasochism');
+            const masturbation = document.getElementById('selMasturbation');
+            const sadism = document.getElementById('selSadism');
+            const service = document.getElementById('selService');
+            const sexing = document.getElementById('selSexing');
+            const tentacle = document.getElementById('selTentacle');
+            const urination = document.getElementById('selUrination');
+
+            //EXP
+            const astretchexp = document.getElementById('sliderAStretchExp');
+            const abnormalexp = document.getElementById('sliderAbnormalExp');
+            const beastexp = document.getElementById('sliderBeastExp');
+            //const birthexp = document.getElementById('sliderBirthExp');
+            const birthsexp = document.getElementById('sliderBirthsExp');
+            const bondageexp = document.getElementById('sliderBondageExp');
+            const boyloveexp = document.getElementById('sliderBoyLoveExp');
+            const cumloveexp = document.getElementById('sliderCumLoveExp');
+            const datingexp = document.getElementById('sliderDatingExp');
+            const desireexp = document.getElementById('sliderDesireExp');
+            const drinkingexp = document.getElementById('sliderDrinkingExp');
+            const ejaculateexp = document.getElementById('sliderEjaculateExp');
+            const exposureexp = document.getElementById('sliderExposureExp');
+            const fuckexp = document.getElementById('sliderFuckExp');
+            const gangbangexp = document.getElementById('sliderGangbangExp');
+            const hypnogasmexp = document.getElementById('sliderHypnogasmExp');
+            const hypnoticexp = document.getElementById('sliderHypnoticExp');
+            const hypnotizedexp = document.getElementById('sliderHypnotizedExp');
+            const impregexp = document.getElementById('sliderImpregExp');
+            const incestexp = document.getElementById('sliderIncestExp');
+            const kissingexp = document.getElementById('sliderKissingExp');
+            const lactationexp = document.getElementById('sliderLactationExp');
+            const lesbianexp = document.getElementById('sliderLesbianExp');
+            const masochismexp = document.getElementById('sliderMasochismExp');
+            const masturbateexp = document.getElementById('sliderMasturbateExp');
+            const nightcrawlexp = document.getElementById('sliderNightcrawlExp');
+            const ntrexp = document.getElementById('sliderNTRExp');
+            const oralexp = document.getElementById('sliderOralExp');
+            const orgasmexp = document.getElementById('sliderOrgasmExp');
+            const painexp = document.getElementById('sliderPainExp');
+            const pornexp = document.getElementById('sliderPornExp');
+            const pregnancyexp = document.getElementById('sliderPregnancyExp');
+            const sadismexp = document.getElementById('sliderSadismExp');
+            const scatexp = document.getElementById('sliderScatExp');
+            const serviceexp = document.getElementById('sliderServiceExp');
+            const sextechexp = document.getElementById('sliderSexTechExp');
+            const swallowingexp = document.getElementById('sliderSwallowingExp');
+            const tbirthexp = document.getElementById('sliderTBirthExp');
+            const tentacleexp = document.getElementById('sliderTentacleExp');
+            const traumaticexp = document.getElementById('sliderTraumaticExp');
+            const utrainingexp = document.getElementById('sliderUTrainingExp');
+            const urinationexp = document.getElementById('sliderUrinationExp');
+            const vcreampieexp = document.getElementById('sliderVCreampieExp');
+            const acreampieexp = document.getElementById('sliderACreampieExp');
+            const vstretchexp = document.getElementById('sliderVStretchExp');
+            const whoringexp = document.getElementById('sliderWhoringExp');
+   
+            // Phys List
+            let traitListPhys = [virgin.value, neverkissed.value, cinsensitive.value, csensitive.value, vinsensitive.value, vsensitive.value, ainsensitive.value, asensitive.value, binsensitive.value, bsensitive.value, minsensitive.value, msensitive.value, smelltolerant.value, smellsensitive.value, getsweteasily.value, getswetslowly.value, strongstomach.value, skilledtongue.value, weakbladder.value, healthy.value, frail.value, nicelegs.value, nicebutt.value, uinsensitive.value, usensitive.value, lactating.value, childsbody.value, animalears.value, tail.value, hairlength.value, currentarmpithair.value, bustsize.value, penissize.value, hipsize.value, bodytype.value, currentpubichair.value];
+            let traitFilterPhys = [];
+
+            for(i = 0; i < traitListPhys.length; i++){
+                if(traitListPhys[i])
+                    traitFilterPhys.push(traitListPhys[i] + '\r\n');
+            };
+
+            let traitPhysPrint = traitFilterPhys.join('');
+
+            // Mind List
+            let traitListMind = [timid.value, docile.value, quiet.value, humble.value, composed.value, apathetic.value, impassive.value, curious.value, optimistic.value, reserved.value, virtuous.value, tsundere.value, repressed.value, aloof.value, shy.value, shameless.value, lazy.value, delicate.value, tough.value, quickwitted.value, masturbator.value, devoted.value, selfconscious.value, corruptible.value, perverted.value, bisexual.value, androphobic.value, gynophobic.value, abusive.value, enjoysabuse.value, impish.value, charming.value, enchanting.value, popular.value, childsmind.value, insatiable.value, nondrinker.value, providence.value, witchcraft.value, engineer.value, lordly.value, dependable.value, lucky.value, reversednames.value, sexualpreference.value];
+            let traitFilterMind = [];
+
+            for(i = 0; i < traitListMind.length; i++){
+                if(traitListMind[i])
+                    traitFilterMind.push(traitListMind[i] + '\r\n');
+            };
+
+            let traitMindPrint = traitFilterMind.join('');
+
+            //ABL List
+            let traitListABL = [sexknow.value, desire.value, service.value, sexing.value, lesbian.value, bl.value, exposure.value, masturbation.value, cumlove.value, ejaculation.value, lactation.value, urination.value, tentacle.value, birthing.value, drinking.value, masochism.value, sadism.value, hypnotism.value];
+            let traitFilterABL = [];
+
+            for(i = 0; i < traitListABL.length; i++){
+                if(traitListABL[i])
+                    traitFilterABL.push(traitListABL[i] + '\r\n');
+            };
+
+            let traitABLPrint = traitFilterABL.join('');
+
+            //EXP List
+            
+                let traitListEXP = ['奉仕経験値,' + serviceexp.value, '性交経験値,' + fuckexp.value, 'レズ経験値,' + lesbianexp.value, 'ＢＬ経験値,' + boyloveexp.value, '露出経験値,' + exposureexp.value, '自慰経験値,' + masturbateexp.value, '精愛経験値,' + cumloveexp.value, '射精経験値,' + ejaculateexp.value, '噴乳経験値,' + lactationexp.value, '排泄経験値,' + scatexp.value, '触手経験値,' + tentacleexp.value, '肝臓経験値,' + drinkingexp.value, '嗜虐経験値,' + sadismexp.value, '被虐経験値,' + painexp.value, '催眠経験値,' + hypnoticexp.value, '性技経験値,' + sextechexp.value, '欲望経験値,' + desireexp.value, '絶頂経験,' + orgasmexp.value, '苦痛快楽経験,' + masochismexp.value, 'Ｖ拡張経験,' + vstretchexp.value, 'Ａ拡張経験,' + astretchexp.value, '緊縛経験,' + bondageexp.value, '膣内射精経験,' + vcreampieexp.value, '腸内射精経験,' + acreampieexp.value, '口内射精経験,' + swallowingexp.value, 'Ｕ開発経験,' + utrainingexp.value, 'デート経験,' + datingexp.value, 'キス経験,' + kissingexp.value, '口淫経験,' + oralexp.value, 'ＮＴＲ経験,' + ntrexp.value, 'おもらし経験,' + urinationexp.value, 'トラウマ経験,' + traumaticexp.value, '出産経験,' + birthsexp.value, '触手出産経験,' + tbirthexp.value, '夜這い経験,' + nightcrawlexp.value, '異常経験,' + abnormalexp.value, '輪姦経験,' + gangbangexp.value, '獣姦経験,' + beastexp.value, '売春経験,' + whoringexp.value, '撮影経験,' + pornexp.value, '近親相姦経験,' + incestexp.value, '被催眠経験,' + impregexp.value, '孕ませ経験,' + pregnancyexp.value, '妊娠経験,' + hypnotizedexp.value, '催眠絶頂経験,' + hypnogasmexp.value];
+                let traitFilterEXP = [];
+                
+                if(document.getElementById('exp_on').checked) {
+                    for(i = 0; i < traitListEXP.length; i++){
+                        if(traitListEXP[i])
+                            traitFilterEXP.push('経験,' + traitListEXP[i] + '\r\n');
+                    };
+
+                    var traitEXPPrint = traitFilterEXP.join('');
+                }
+
+                if(document.getElementById('exp_off').checked) {
+
+                    for(i = 0; i < traitListEXP.length; i++){
+                        if(traitListEXP[i])
+                            traitFilterEXP.push('' + '\r\n');
+                    };            
+                    
+                    var traitEXPPrint = ''
+
+                }
+
+            //etc
+            const msg = document.getElementById('msg');
+
+            // This variable stores all the data.
+            let data = 
+                '番号,' + id.value + '\r\n' + 
+                '名前,' + name.value + '\r\n' + 
+                '呼び名,' + name.value + '\r\n' + 
+                '\r\n' + 
+                ';--- Names + Sex---' + '\r\n' +
+                'CSTR,0,' + lname.value + '\r\n' +
+                'CSTR,1,' + name.value + '\r\n' +
+                'CSTR,3,' + name.value + '\r\n' +
+                'CSTR,4,' + name.value + '\r\n' +
+                'CSTR,5,' + lname.value + '\r\n' +
+                'CSTR,6,' + name.value + '\r\n' +
+                'CSTR,7,' + name.value + '\r\n' +
+                'CSTR,8,' + race.value + '\r\n' +
+                'CSTR,98,' + nickname.value + '\r\n' +
+                'CSTR,99,' + name.value + '\r\n' +
+                '\r\n' + 
+
+                ';--- STR | STA | WILL ---' + '\r\n' +
+                '基礎,体力,' + str.value + '\r\n' + 
+                '基礎,気力,' + sta.value + '\r\n' + 
+                '基礎,精神力,' + will.value + '\r\n' + 
+                '\r\n' + 
+
+                ';--- SLG Stats ---' + '\r\n' +
+                '能力,武闘,' + fight.value + '\r\n' + 
+                '能力,防衛,' + def.value + '\r\n' + 
+                '能力,知略,' + strat.value + '\r\n' + 
+                '能力,政治,' + pol.value + '\r\n' + 
+                '能力,妖術,' + mag.value + '\r\n' + 
+                '能力,歌唱,' + sing.value + '\r\n' + 
+                '能力,料理,' + cook.value + '\r\n' + 
+                '能力,野心,' + amb.value + '\r\n' + 
+                '\r\n' + 
+
+                ';--- Physical Traits ---' + '\r\n' +
+                '素質,性別,' + sex.value + '\r\n' + 
+                traitPhysPrint +
+                ';素質,髪色,0x' + haircolor.value + '  ;Remove the #' + '\r\n' +
+                '素質,Ｖ締まり,' + vtightness.value + '\r\n' + 
+                '素質,Ａ締まり,' + atightness.value + '\r\n' + 
+
+                '\r\n' +
+
+                ';--- Mind Traits ---' + '\r\n' +
+                traitMindPrint +
+
+                '\r\n' + 
+
+                ';--- ABL ---' + '\r\n' +
+                '能力,主導度Ｎ,' + assertived.value + '\r\n' + 
+                '能力,主導度Ｕ,' + assertives.value + '\r\n' + 
+                '能力,倒錯度,' + perversion.value + '\r\n' + 
+                traitABLPrint +
+
+                '\r\n' + 
+
+                ';--- EXP - If not used or if all the values are 0 it is safe to remove this segment ---' + '\r\n' +
+                traitEXPPrint + 
+
+                '\r\n' +               
+            
+                ';--- Creator comments: ' + msg.value + '\r\n' + 
+
+                '\r\n' + 
+
+                ';--- This character was generated by RoBuster / eraFEK Character Maker v1 ---';
+            
+            // Convert the text to BLOB.
+            var BOM = "\uFEFF";
+            var csvData = BOM + data;
+            const textToBLOB = new Blob([csvData], { type: 'text/csv;charset=utf-8' });
+            const sFileName = 'Chara' + id.value + ' ' + name.value + '.csv';	   // The file to save the data.
+
+            let newLink = document.createElement("a");
+            newLink.download = sFileName;
+
+            if (window.webkitURL != null) {
+                newLink.href = window.webkitURL.createObjectURL(textToBLOB);
+            }
+            else {
+                newLink.href = window.URL.createObjectURL(textToBLOB);
+                newLink.style.display = "none";
+                document.body.appendChild(newLink);
+            }
+
+            newLink.click(); 
+        }
+    </script>
+</html>

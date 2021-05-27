@@ -5,12 +5,12 @@
         <link rel="stylesheet" href="css.css">
         <meta charset="UTF-8">
     </head>
-<body>
+    <body>
         <div>
             <center>
             <h1>RoBuster</h1>
                 eraFEK / eratoho-k character creator<br>
-                Version 1<br>
+                Version 1.1<br>
                 This website requires javascript to function.<br><br>
             <div>
                 <input type="text" id="txtID" placeholder="ID" required>
@@ -946,6 +946,78 @@
                         <option value="能力,奉仕,10">S</option>
                     </select><br><br>
 
+                    <label for="selCSens">C Sens:</label> 
+                        <select id="selCSens" name="CSens">
+                        <option value="">G</option>
+                        <option value="能力,Ｃ感,1">F</option>
+                        <option value="能力,Ｃ感,2">E</option>
+                        <option value="能力,Ｃ感,3">D</option>
+                        <option value="能力,Ｃ感,4">C</option>
+                        <option value="能力,Ｃ感,6">B</option>
+                        <option value="能力,Ｃ感,8">A</option>
+                        <option value="能力,Ｃ感,10">S</option>
+                    </select><br><br>
+
+                    <label for="selVSens">V Sens:</label> 
+                        <select id="selVSens" name="VSens">
+                        <option value="">G</option>
+                        <option value="能力,Ｖ感,1">F</option>
+                        <option value="能力,Ｖ感,2">E</option>
+                        <option value="能力,Ｖ感,3">D</option>
+                        <option value="能力,Ｖ感,4">C</option>
+                        <option value="能力,Ｖ感,6">B</option>
+                        <option value="能力,Ｖ感,8">A</option>
+                        <option value="能力,Ｖ感,10">S</option>
+                    </select><br><br>
+
+                    <label for="selASens">A Sens:</label> 
+                        <select id="selASens" name="ASens">
+                        <option value="">G</option>
+                        <option value="能力,Ａ感,1">F</option>
+                        <option value="能力,Ａ感,2">E</option>
+                        <option value="能力,Ａ感,3">D</option>
+                        <option value="能力,Ａ感,4">C</option>
+                        <option value="能力,Ａ感,6">B</option>
+                        <option value="能力,Ａ感,8">A</option>
+                        <option value="能力,Ａ感,10">S</option>
+                    </select><br><br>
+
+                    <label for="selBSens">B Sens:</label> 
+                        <select id="selBSens" name="BSens">
+                        <option value="">G</option>
+                        <option value="能力,Ｂ感,1">F</option>
+                        <option value="能力,Ｂ感,2">E</option>
+                        <option value="能力,Ｂ感,3">D</option>
+                        <option value="能力,Ｂ感,4">C</option>
+                        <option value="能力,Ｂ感,6">B</option>
+                        <option value="能力,Ｂ感,8">A</option>
+                        <option value="能力,Ｂ感,10">S</option>
+                    </select><br><br>
+
+                    <label for="selMSens">M Sens:</label> 
+                        <select id="selMSens" name="MSens">
+                        <option value="">G</option>
+                        <option value="能力,Ｍ感,1">F</option>
+                        <option value="能力,Ｍ感,2">E</option>
+                        <option value="能力,Ｍ感,3">D</option>
+                        <option value="能力,Ｍ感,4">C</option>
+                        <option value="能力,Ｍ感,6">B</option>
+                        <option value="能力,Ｍ感,8">A</option>
+                        <option value="能力,Ｍ感,10">S</option>
+                    </select><br><br>
+
+                    <label for="selUSens">U Sens:</label> 
+                        <select id="selUSens" name="USens">
+                        <option value="">G</option>
+                        <option value="能力,Ｕ感,1">F</option>
+                        <option value="能力,Ｕ感,2">E</option>
+                        <option value="能力,Ｕ感,3">D</option>
+                        <option value="能力,Ｕ感,4">C</option>
+                        <option value="能力,Ｕ感,6">B</option>
+                        <option value="能力,Ｕ感,8">A</option>
+                        <option value="能力,Ｕ感,10">S</option>
+                    </select><br><br>
+
                     <label for="selSexing">Sexing:</label> 
                         <select id="selSexing" name="Sexing">
                         <option value="">G</option>
@@ -1141,7 +1213,6 @@
                   </form> 
                   <br><br>
                 <div class="column6">
-
                     <div class="slidecontainer">
                         <input type="range" min="0" max="100" class="slider" value="0" id="sliderServiceExp">
                         <p>Service EXP: <span id="ServiceExpSlide"></span></p>
@@ -1820,7 +1891,41 @@
                         TBirthExpSlide.innerHTML = this.value;
                         }
                     </script> <BR>
+                    </div>
+                    <h3>Enable Hidden Experience?</h3>
+                    Ignore these if you don't know what experience does. If you enable it and change nothing you just get a big piece of useless data in your sheet.<br>
+                    <form>
+                        <input type="radio" id="exp2_off" name="enable2_exp" value="0" checked>
+                        <label for="off">Off</label> 
+                        <input type="radio" id="exp2_on" name="enable2_exp" value="1">
+                        <label for="on">On</label><br>
+                      </form> 
+                      <br>
+                    <div class="column4">
+                        <label for="quantity">V Insert Exp:</label>
+                        <input type="number" id="numVInsertExp" min="0" max="100" value="0" size="3"><br><br>
 
+                        <label for="quantity">V Intercourse Exp:</label>
+                        <input type="number" id="numVIntercourseExp" min="0" max="100" value="0" size="3"><br><br>
+
+                        <label for="quantity">A Insert Exp:</label>
+                        <input type="number" id="numAInsertExp" min="0" max="100" value="0" size="3"><br><br>
+
+                        <label for="quantity">A Intercourse Exp:</label>
+                        <input type="number" id="numAIntercourseExp" min="0" max="100" value="0" size="3"><br><br>
+
+                        <label for="quantity">U Insert Exp:</label>
+                        <input type="number" id="numUInsertExp" min="0" max="100" value="0" size="3"><br><br>
+
+                        <label for="quantity">U Intercourse Exp:</label>
+                        <input type="number" id="numUIntercourseExp" min="0" max="100" value="0" size="3"><br><br>
+
+                        <label for="quantity">Sexual Knowledge Exp:</label>
+                        <input type="number" id="numSexKnowExp" min="0" max="100" value="0" size="3"><br><br>
+
+                        <label for="quantity">Milking Exp:</label>
+                        <input type="number" id="numMilkingExp" min="0" max="100" value="0" size="3"><br><br>
+                    </div>
                 </div>
             </div>
 
@@ -1973,6 +2078,12 @@
             //ABL
             const sexknow = document.getElementById('selSexKnow');
             const desire = document.getElementById('selDesire');
+            const csens = document.getElementById('selCSens');
+            const vsens = document.getElementById('selVSens');
+            const asens = document.getElementById('selASens');
+            const bsens = document.getElementById('selBSens');
+            const msens = document.getElementById('selMSens');
+            const usens = document.getElementById('selUSens');
             const birthing = document.getElementById('selBirthing');
             const bl = document.getElementById('selBL');
             const cumlove = document.getElementById('selCumLove');
@@ -2037,9 +2148,18 @@
             const acreampieexp = document.getElementById('sliderACreampieExp');
             const vstretchexp = document.getElementById('sliderVStretchExp');
             const whoringexp = document.getElementById('sliderWhoringExp');
+            const vinsertexp = document.getElementById('numVInsertExp');
+            const vintercourseexp = document.getElementById('numVIntercourseExp');
+            const ainsertexp = document.getElementById('numAInsertExp');
+            const aintercourseexp = document.getElementById('numAIntercourseExp');
+            const uinsertexp = document.getElementById('numUInsertExp');
+            const uintercourseexp = document.getElementById('numUIntercourseExp');
+            const sexknowexp = document.getElementById('numSexKnowExp');
+            const milkingexp = document.getElementById('numMilkingExp');
+
    
             // Phys List
-            let traitListPhys = [virgin.value, neverkissed.value, csensitive.value, vsensitive.value, asensitive.value, bsensitive.value, msensitive.value, smellsensitive.value, getswetslowly.value, strongstomach.value, skilledtongue.value, weakbladder.value, healthy.value, frail.value, nicelegs.value, nicebutt.value, uinsensitive.value, usensitive.value, lactating.value, childsbody.value, animalears.value, tail.value, hairlength.value, currentarmpithair.value, bustsize.value, penissize.value, hipsize.value, bodytype.value, currentpubichair.value];
+            let traitListPhys = [virgin.value, neverkissed.value, csensitive.value, vsensitive.value, asensitive.value, bsensitive.value, msensitive.value, smellsensitive.value, getswetslowly.value, strongstomach.value, skilledtongue.value, weakbladder.value, healthy.value, frail.value, nicelegs.value, nicebutt.value, usensitive.value, lactating.value, childsbody.value, animalears.value, tail.value, hairlength.value, currentarmpithair.value, bustsize.value, penissize.value, hipsize.value, bodytype.value, currentpubichair.value];
             let traitFilterPhys = [];
 
             for(i = 0; i < traitListPhys.length; i++){
@@ -2061,7 +2181,7 @@
             let traitMindPrint = traitFilterMind.join('');
 
             //ABL List
-            let traitListABL = [sexknow.value, desire.value, service.value, sexing.value, lesbian.value, bl.value, exposure.value, masturbation.value, cumlove.value, ejaculation.value, lactation.value, urination.value, tentacle.value, birthing.value, drinking.value, masochism.value, sadism.value, hypnotism.value];
+            let traitListABL = [sexknow.value, desire.value, csens.value, vsens.value, asens.value, bsens.value, msens.value, usens.value, service.value, sexing.value, lesbian.value, bl.value, exposure.value, masturbation.value, cumlove.value, ejaculation.value, lactation.value, urination.value, tentacle.value, birthing.value, drinking.value, masochism.value, sadism.value, hypnotism.value];
             let traitFilterABL = [];
 
             for(i = 0; i < traitListABL.length; i++){
@@ -2072,9 +2192,8 @@
             let traitABLPrint = traitFilterABL.join('');
 
             //EXP List
-            
-                let traitListEXP = ['奉仕経験値,' + serviceexp.value, '性交経験値,' + fuckexp.value, 'レズ経験値,' + lesbianexp.value, 'ＢＬ経験値,' + boyloveexp.value, '露出経験値,' + exposureexp.value, '自慰経験値,' + masturbateexp.value, '精愛経験値,' + cumloveexp.value, '射精経験値,' + ejaculateexp.value, '噴乳経験値,' + lactationexp.value, '排泄経験値,' + scatexp.value, '触手経験値,' + tentacleexp.value, '肝臓経験値,' + drinkingexp.value, '嗜虐経験値,' + sadismexp.value, '被虐経験値,' + painexp.value, '催眠経験値,' + hypnoticexp.value, '性技経験値,' + sextechexp.value, '欲望経験値,' + desireexp.value, '絶頂経験,' + orgasmexp.value, '苦痛快楽経験,' + masochismexp.value, 'Ｖ拡張経験,' + vstretchexp.value, 'Ａ拡張経験,' + astretchexp.value, '緊縛経験,' + bondageexp.value, '膣内射精経験,' + vcreampieexp.value, '腸内射精経験,' + acreampieexp.value, '口内射精経験,' + swallowingexp.value, 'Ｕ開発経験,' + utrainingexp.value, 'デート経験,' + datingexp.value, 'キス経験,' + kissingexp.value, '口淫経験,' + oralexp.value, 'ＮＴＲ経験,' + ntrexp.value, 'おもらし経験,' + urinationexp.value, 'トラウマ経験,' + traumaticexp.value, '出産経験,' + birthsexp.value, '触手出産経験,' + tbirthexp.value, '夜這い経験,' + nightcrawlexp.value, '異常経験,' + abnormalexp.value, '輪姦経験,' + gangbangexp.value, '獣姦経験,' + beastexp.value, '売春経験,' + whoringexp.value, '撮影経験,' + pornexp.value, '近親相姦経験,' + incestexp.value, '被催眠経験,' + impregexp.value, '孕ませ経験,' + pregnancyexp.value, '妊娠経験,' + hypnotizedexp.value, '催眠絶頂経験,' + hypnogasmexp.value];
-                let traitFilterEXP = [];
+            let traitListEXP = ['奉仕経験値,' + serviceexp.value, '性交経験値,' + fuckexp.value, 'レズ経験値,' + lesbianexp.value, 'ＢＬ経験値,' + boyloveexp.value, '露出経験値,' + exposureexp.value, '自慰経験値,' + masturbateexp.value, '精愛経験値,' + cumloveexp.value, '射精経験値,' + ejaculateexp.value, '噴乳経験値,' + lactationexp.value, '排泄経験値,' + scatexp.value, '触手経験値,' + tentacleexp.value, '肝臓経験値,' + drinkingexp.value, '嗜虐経験値,' + sadismexp.value, '被虐経験値,' + painexp.value, '催眠経験値,' + hypnoticexp.value, '性技経験値,' + sextechexp.value, '欲望経験値,' + desireexp.value, '絶頂経験,' + orgasmexp.value, '苦痛快楽経験,' + masochismexp.value, 'Ｖ拡張経験,' + vstretchexp.value, 'Ａ拡張経験,' + astretchexp.value, '緊縛経験,' + bondageexp.value, '膣内射精経験,' + vcreampieexp.value, '腸内射精経験,' + acreampieexp.value, '口内射精経験,' + swallowingexp.value, 'Ｕ開発経験,' + utrainingexp.value, 'デート経験,' + datingexp.value, 'キス経験,' + kissingexp.value, '口淫経験,' + oralexp.value, 'ＮＴＲ経験,' + ntrexp.value, 'おもらし経験,' + urinationexp.value, 'トラウマ経験,' + traumaticexp.value, '出産経験,' + birthsexp.value, '触手出産経験,' + tbirthexp.value, '夜這い経験,' + nightcrawlexp.value, '異常経験,' + abnormalexp.value, '輪姦経験,' + gangbangexp.value, '獣姦経験,' + beastexp.value, '売春経験,' + whoringexp.value, '撮影経験,' + pornexp.value, '近親相姦経験,' + incestexp.value, '被催眠経験,' + impregexp.value, '孕ませ経験,' + pregnancyexp.value, '妊娠経験,' + hypnotizedexp.value, '催眠絶頂経験,' + hypnogasmexp.value];
+            let traitFilterEXP = [];
                 
                 if(document.getElementById('exp_on').checked) {
                     for(i = 0; i < traitListEXP.length; i++){
@@ -2093,6 +2212,30 @@
                     };            
                     
                     var traitEXPPrint = ''
+
+                }
+
+            //EXP2 List
+            let traitListEXP2 = ['Ｖ挿入経験,' + vinsertexp.value + '\r\n' + '経験,Ｖ性交経験,' + vintercourseexp.value, 'Ａ挿入経験,' + ainsertexp.value, 'Ａ性交経験,' + aintercourseexp.value, 'Ｕ挿入経験,' + uinsertexp.value, 'Ｕ性交経験,' + uintercourseexp.value, '性知識経験値,' + sexknowexp.value, '搾乳経験値,' + milkingexp.value];
+            let traitFilterEXP2 = [];
+
+            if(document.getElementById('exp2_on').checked) {
+                    for(i = 0; i < traitListEXP2.length; i++){
+                        if(traitListEXP2[i])
+                            traitFilterEXP2.push('経験,' + traitListEXP2[i] + '\r\n');
+                    };
+
+                    var traitEXP2Print = traitFilterEXP2.join('');
+                }
+
+                if(document.getElementById('exp2_off').checked) {
+
+                    for(i = 0; i < traitListEXP2.length; i++){
+                        if(traitListEXP2[i])
+                            traitFilterEXP2.push('' + '\r\n');
+                    };            
+                    
+                    var traitEXP2Print = ''
 
                 }
 
@@ -2159,6 +2302,8 @@
 
                 ';--- EXP - If not used or if all the values are 0 it is safe to remove this segment ---' + '\r\n' +
                 traitEXPPrint + 
+                //No fucking clue why but if I don't split this in two it doesn't perform a \r\n at the next line (vinsertexp), so this works for now.
+                traitEXP2Print + 
 
                 '\r\n' +               
             

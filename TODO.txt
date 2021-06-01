@@ -2,10 +2,8 @@ More races / different input method
 
 for virginity make checkmark system because (while rare) when some female turns into futa she might've already used that wondrous pole, you know?
 
-for sliders, make direct input possible for rare instances where gradation by 50 isn't good enough
-
-also I don't see ability levels for sensitivities and experience for c v a b m u
-
 properly check if each trait has the correct jap tag
 
-javascript notice only when not enabled
+--
+
+for sliders, make direct input possible for rare instances where gradation by 50 isn't good enough -> Steps of 10 now

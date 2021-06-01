@@ -1,13 +1,14 @@
 * {
   box-sizing: border-box;
 }
+
 div {
   padding: 10px;
   background-color: #f6f6f6;
   overflow: hidden;
   color:rgb(20, 20, 20);
-
 }
+
 input[type=text], textarea, select {
   font: 17px Calibri;
   width: 100%;
@@ -82,10 +83,6 @@ input[type=button]{
   border-radius: 10px;
 }
 
-.fifty {
-  width: 33%;
-}
-
 body {
   font: 17px Calibri;
   width: 80%;
@@ -140,3 +137,8 @@ input[type=button] {
   cursor: pointer;
 }
 
+footer {
+  font: 17px Calibri;
+  margin: auto;
+  color: white;
+}

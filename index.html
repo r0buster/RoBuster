@@ -878,7 +878,8 @@
             <br>
             <button class="collapsible"><b>Sex Traits / ABL</b></button>
             <div class="content"><br>          
-                <div class="column5">             
+                <div class="column5">     
+                    <!-- Has no effect on stats so commented out for now         
                     <label for="selSexual-Preference" name="Sexual-Preference">Preferred Sexual Activity</label>
                     <select id="selSexual-Preference" name="Sexual-Preference">
                         <option selected value="">-- Choose Preferred Sexual Activity --</option>
@@ -908,7 +909,7 @@
                         <option value="素質,性的嗜好,23">Getting pregnant</option>
                         <option value="素質,性的嗜好,24">Incest</option>
                         <option value="素質,性的嗜好,25">Homosexuality</option>
-                    </select><br><br>
+                    </select><br><br> -->
                     
                     <!-- Might be re-enabled once I figure out wtf this does
                         <label for="selSexual-Preference-Lock" name="Sexual-Preference-Lock">Sexual Preference Lock</label>
@@ -922,7 +923,7 @@
                         <option value="">Ignorant</option>
                         <option value="能力,性知識,1">Innocent</option>
                         <option value="能力,性知識,2">Beginner</option>
-                        <option value="能力,性知識,3">Average</option>
+                        <option selected value="能力,性知識,3">Average</option>
                         <option value="能力,性知識,4">Teacher</option>
                         <option value="能力,性知識,5">Sage</option>
                     </select><br><br>
@@ -1208,7 +1209,7 @@
             <br>
             <button class="collapsible"><b>Experiences</b></button>
             <div class="content"><br>       
-                <h3>Enable Experience?</h3><br>
+                <h3>Enable Experience Block 1?</h3><br>
                 Ignore these if you don't know what experience does. If you enable it and change nothing you just get a big piece of useless data in your sheet.<br>
                 <form>
                     <input type="radio" id="exp_off" name="enable_exp" value="0" checked>
@@ -1897,7 +1898,7 @@
                         }
                     </script> <BR>
                     </div>
-                    <h3>Enable Hidden Experience?</h3>
+                    <h3>Enable Experience Block 2?</h3>
                     Ignore these if you don't know what experience does. If you enable it and change nothing you just get a big piece of useless data in your sheet.<br>
                     <form>
                         <input type="radio" id="exp2_off" name="enable2_exp" value="0" checked>
@@ -1907,6 +1908,24 @@
                       </form> 
                       <br>
                     <div class="column4">
+                        <label for="quantity">C Sens Exp:</label>
+                        <input type="number" id="numCSensExp" min="0" max="100" value="0" size="3"><br><br>
+
+                        <label for="quantity">V Sens Exp:</label>
+                        <input type="number" id="numVSensExp" min="0" max="100" value="0" size="3"><br><br>
+
+                        <label for="quantity">A Sens Exp:</label>
+                        <input type="number" id="numASensExp" min="0" max="100" value="0" size="3"><br><br>
+
+                        <label for="quantity">B Sens Exp:</label>
+                        <input type="number" id="numBSensExp" min="0" max="100" value="0" size="3"><br><br>
+
+                        <label for="quantity">M Sens Exp:</label>
+                        <input type="number" id="numMSensExp" min="0" max="100" value="0" size="3"><br><br>
+
+                        <label for="quantity">U Sens Exp:</label>
+                        <input type="number" id="numUSensExp" min="0" max="100" value="0" size="3"><br><br>
+
                         <label for="quantity">V Insert Exp:</label>
                         <input type="number" id="numVInsertExp" min="0" max="100" value="0" size="3"><br><br>
 
@@ -1930,6 +1949,7 @@
 
                         <label for="quantity">Milking Exp:</label>
                         <input type="number" id="numMilkingExp" min="0" max="100" value="0" size="3"><br><br>
+
                     </div>
                 </div>
             </div>
@@ -2086,7 +2106,7 @@
             const dependable = document.getElementById('selDependable');
             const lucky = document.getElementById('selLucky');
             const reversednames = document.getElementById('selReversed-Names');
-            const sexualpreference = document.getElementById('selSexual-Preference');
+            //const sexualpreference = document.getElementById('selSexual-Preference');
             //const sexualpreferencelock = document.getElementById('selSexual-Preference-Lock');
 
             //ABL
@@ -2170,7 +2190,12 @@
             const uintercourseexp = document.getElementById('numUIntercourseExp');
             const sexknowexp = document.getElementById('numSexKnowExp');
             const milkingexp = document.getElementById('numMilkingExp');
-
+            const csensexp = document.getElementById('numCSensExp');
+            const vsensexp = document.getElementById('numVSensExp');
+            const asensexp = document.getElementById('numASensExp');
+            const bsensexp = document.getElementById('numBSensExp');
+            const msensexp = document.getElementById('numMSensExp');
+            const usensexp = document.getElementById('numUSensExp');
    
             // Phys List
             let traitListPhys = [virgin.value, virginb.value, neverkissed.value, csensitive.value, vsensitive.value, asensitive.value, bsensitive.value, msensitive.value, smellsensitive.value, getswetslowly.value, strongstomach.value, skilledtongue.value, weakbladder.value, healthy.value, frail.value, nicelegs.value, nicebutt.value, usensitive.value, lactating.value, childsbody.value, animalears.value, tail.value, hairlength.value, currentarmpithair.value, bustsize.value, penissize.value, hipsize.value, bodytype.value, currentpubichair.value];
@@ -2184,7 +2209,7 @@
             let traitPhysPrint = traitFilterPhys.join('');
 
             // Mind List
-            let traitListMind = [timid.value, docile.value, quiet.value, humble.value, composed.value, apathetic.value, impassive.value, curious.value, optimistic.value, reserved.value, virtuous.value, tsundere.value, repressed.value, aloof.value, shy.value, shameless.value, lazy.value, delicate.value, tough.value, quickwitted.value, masturbator.value, devoted.value, selfconscious.value, corruptible.value, perverted.value, bisexual.value, androphobic.value, gynophobic.value, abusive.value, enjoysabuse.value, impish.value, charming.value, enchanting.value, popular.value, childsmind.value, insatiable.value, nondrinker.value, providence.value, witchcraft.value, engineer.value, lordly.value, dependable.value, lucky.value, reversednames.value, sexualpreference.value];
+            let traitListMind = [timid.value, docile.value, quiet.value, humble.value, composed.value, apathetic.value, impassive.value, curious.value, optimistic.value, reserved.value, virtuous.value, tsundere.value, repressed.value, aloof.value, shy.value, shameless.value, lazy.value, delicate.value, tough.value, quickwitted.value, masturbator.value, devoted.value, selfconscious.value, corruptible.value, perverted.value, bisexual.value, androphobic.value, gynophobic.value, abusive.value, enjoysabuse.value, impish.value, charming.value, enchanting.value, popular.value, childsmind.value, insatiable.value, nondrinker.value, providence.value, witchcraft.value, engineer.value, lordly.value, dependable.value, lucky.value, reversednames.value];
             let traitFilterMind = [];
 
             for(i = 0; i < traitListMind.length; i++){
@@ -2206,7 +2231,7 @@
             let traitABLPrint = traitFilterABL.join('');
 
             //EXP List
-            let traitListEXP = ['奉仕経験値,' + serviceexp.value, '性交経験値,' + fuckexp.value, 'レズ経験値,' + lesbianexp.value, 'ＢＬ経験値,' + boyloveexp.value, '露出経験値,' + exposureexp.value, '自慰経験値,' + masturbateexp.value, '精愛経験値,' + cumloveexp.value, '射精経験値,' + ejaculateexp.value, '噴乳経験値,' + lactationexp.value, '排泄経験値,' + scatexp.value, '触手経験値,' + tentacleexp.value, '肝臓経験値,' + drinkingexp.value, '嗜虐経験値,' + sadismexp.value, '被虐経験値,' + painexp.value, '催眠経験値,' + hypnoticexp.value, '性技経験値,' + sextechexp.value, '欲望経験値,' + desireexp.value, '絶頂経験,' + orgasmexp.value, '苦痛快楽経験,' + masochismexp.value, 'Ｖ拡張経験,' + vstretchexp.value, 'Ａ拡張経験,' + astretchexp.value, '緊縛経験,' + bondageexp.value, '膣内射精経験,' + vcreampieexp.value, '腸内射精経験,' + acreampieexp.value, '口内射精経験,' + swallowingexp.value, 'Ｕ開発経験,' + utrainingexp.value, 'デート経験,' + datingexp.value, 'キス経験,' + kissingexp.value, '口淫経験,' + oralexp.value, 'ＮＴＲ経験,' + ntrexp.value, 'おもらし経験,' + urinationexp.value, 'トラウマ経験,' + traumaticexp.value, '出産経験,' + birthsexp.value, '触手出産経験,' + tbirthexp.value, '夜這い経験,' + nightcrawlexp.value, '異常経験,' + abnormalexp.value, '輪姦経験,' + gangbangexp.value, '獣姦経験,' + beastexp.value, '売春経験,' + whoringexp.value, '撮影経験,' + pornexp.value, '近親相姦経験,' + incestexp.value, '被催眠経験,' + impregexp.value, '孕ませ経験,' + pregnancyexp.value, '妊娠経験,' + hypnotizedexp.value, '催眠絶頂経験,' + hypnogasmexp.value];
+            let traitListEXP = ['Ｃ感経験値,' + csensexp.value, 'Ｖ感経験値,' + vsensexp.value, 'Ａ感経験値,' + asensexp.value, 'Ｂ感経験値,' + bsensexp.value, 'Ｍ感経験値,' + msensexp.value, 'Ｕ感経験値,' + usensexp.value, '奉仕経験値,' + serviceexp.value, '性交経験値,' + fuckexp.value, 'レズ経験値,' + lesbianexp.value, 'ＢＬ経験値,' + boyloveexp.value, '露出経験値,' + exposureexp.value, '自慰経験値,' + masturbateexp.value, '精愛経験値,' + cumloveexp.value, '射精経験値,' + ejaculateexp.value, '噴乳経験値,' + lactationexp.value, '排泄経験値,' + scatexp.value, '触手経験値,' + tentacleexp.value, '肝臓経験値,' + drinkingexp.value, '嗜虐経験値,' + sadismexp.value, '被虐経験値,' + painexp.value, '催眠経験値,' + hypnoticexp.value, '性技経験値,' + sextechexp.value, '欲望経験値,' + desireexp.value, '絶頂経験,' + orgasmexp.value, '苦痛快楽経験,' + masochismexp.value, 'Ｖ拡張経験,' + vstretchexp.value, 'Ａ拡張経験,' + astretchexp.value, '緊縛経験,' + bondageexp.value, '膣内射精経験,' + vcreampieexp.value, '腸内射精経験,' + acreampieexp.value, '口内射精経験,' + swallowingexp.value, 'Ｕ開発経験,' + utrainingexp.value, 'デート経験,' + datingexp.value, 'キス経験,' + kissingexp.value, '口淫経験,' + oralexp.value, 'ＮＴＲ経験,' + ntrexp.value, 'おもらし経験,' + urinationexp.value, 'トラウマ経験,' + traumaticexp.value, '出産経験,' + birthsexp.value, '触手出産経験,' + tbirthexp.value, '夜這い経験,' + nightcrawlexp.value, '異常経験,' + abnormalexp.value, '輪姦経験,' + gangbangexp.value, '獣姦経験,' + beastexp.value, '売春経験,' + whoringexp.value, '撮影経験,' + pornexp.value, '近親相姦経験,' + incestexp.value, '被催眠経験,' + impregexp.value, '孕ませ経験,' + pregnancyexp.value, '妊娠経験,' + hypnotizedexp.value, '催眠絶頂経験,' + hypnogasmexp.value];
             let traitFilterEXP = [];
                 
                 if(document.getElementById('exp_on').checked) {
@@ -2230,7 +2255,7 @@
                 }
 
             //EXP2 List
-            let traitListEXP2 = ['Ｖ挿入経験,' + vinsertexp.value + '\r\n' + '経験,Ｖ性交経験,' + vintercourseexp.value, 'Ａ挿入経験,' + ainsertexp.value, 'Ａ性交経験,' + aintercourseexp.value, 'Ｕ挿入経験,' + uinsertexp.value, 'Ｕ性交経験,' + uintercourseexp.value, '性知識経験値,' + sexknowexp.value, '搾乳経験値,' + milkingexp.value];
+            let traitListEXP2 = ['Ｖ挿入経験,' + vinsertexp.value, 'Ｖ性交経験,' + vintercourseexp.value, 'Ａ挿入経験,' + ainsertexp.value, 'Ａ性交経験,' + aintercourseexp.value, 'Ｕ挿入経験,' + uinsertexp.value, 'Ｕ性交経験,' + uintercourseexp.value, '性知識経験値,' + sexknowexp.value, '搾乳経験値,' + milkingexp.value];
             let traitFilterEXP2 = [];
 
             if(document.getElementById('exp2_on').checked) {
@@ -2317,10 +2342,9 @@
 
                 ';--- EXP - If not used or if all the values are 0 it is safe to remove this segment ---' + '\r\n' +
                 traitEXPPrint + 
-                //No fucking clue why but if I don't split this in two it doesn't perform a \r\n at the next line (vinsertexp), so this works for now. 
-                //Might be related to the fullwidth V. The way it works now is that there's an extra \r\n\ printed in the list itself which for some reason works.
                 traitEXP2Print + 
 
+                //EXP is printed in 2 blocks to not give you TOO much 
                 '\r\n' +     
 
                 ';--- Creator: ' + creator.value + '\r\n' + 

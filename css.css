@@ -78,6 +78,15 @@ input[type=button]{
   border-radius: 10px;
 }
 
+.column8 {
+  display: inline-block;
+  column-count: 8;
+  text-align: center;
+  width: auto;
+  background: rgba(0, 34, 128, 0.1) ;
+  border-radius: 10px;
+}
+
 .slidecontainer {
   width: 100%;
   border-radius: 10px;

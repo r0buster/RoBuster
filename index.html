@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>RoBuster - eraFEK Character Maker (V1.1)</title>
+        <title>RoBuster - eraFEK Character Maker (V1.2)</title>
         <link rel="stylesheet" href="css.css">
         <meta charset="UTF-8">
     </head>
@@ -10,7 +10,7 @@
             <center>
             <h1>RoBuster</h1>
                 eraFEK / eratoho-k character creator<br>
-                Version 1.1<br>
+                Version 1.2<br>
                 <noscript>JavaScript is off. Please enable to view full site.</noscript><br><br>
             <div>
                 <input type="text" id="txtID" placeholder="ID" required>
@@ -37,7 +37,7 @@
             </div>
             <div>
                 <select id="selRace">
-                    <option selected value="">-- Choose Race --</option>
+                    <option selected value="Unknown">-- Choose Race --</option>
                     <option value="Human">Human</option>
                     <option value="Manakete">Manakete</option>
                     <option value="Monster">Monster</option>
@@ -249,11 +249,16 @@
                 <br>
                 <div class="column3">
                 
-                <label for="selVirgin" name="Virgin">Virgin</label>
-                <select id="selVirgin" size=3 name="Virgin">
-                    <option selected value="">Not a virgin</option>
-                    <option value="素質,処女,1">Virgin ♀</option>
-                    <option value="素質,童貞,1">Virgin ♂</option>
+                <label for="selVirgin" name="Virgin">Virgin ♀</label>
+                <select id="selVirgin" name="Virgin">
+                    <option value="">Not a virgin</option>
+                    <option selected value="素質,処女,1">Virgin ♀</option>
+                </select><br><br>
+
+                <label for="selVirginB" name="VirginB">Virgin ♂</label>
+                <select id="selVirginB" name="VirginB">
+                    <option value="">Not a virgin</option>
+                    <option selected value="素質,童貞,1">Virgin ♂</option>
                 </select><br><br>
 
                 <label for="selAnalVirgin" name="AnalVirgin">Anal Virgin</label>
@@ -305,7 +310,7 @@
                     <option selected value="素質,ヒップサイズ,0">Average</option>
                     <option value="素質,ヒップサイズ,1">Big</option>
                     <option value="素質,ヒップサイズ,2">Huge</option>
-                </select><br><br>
+                </select><br><br><br><br>
 
                 <label for="selPenis-Size" name="Penis-Size">Penis Size (ignore for female)</label>
                 <select id="selPenis-Size" name="Penis-Size">
@@ -632,7 +637,7 @@
                 </select><br><br>
             </div>
             <br><br>
-            <div class="column6"><b>               
+            <div class="column8"><b>               
                 <label for="selVirtuous" name="Virtuous">Virtuous</label>
                 <select id="selVirtuous" size="2" name="Virtuous">
                     <option selected value="">No</option>
@@ -783,7 +788,7 @@
                     <option value="素質,天の御遣い,1">Yes</option>
                 </select><br><br>
                 
-                <label for="selWitchcraft" name="Witchcraft">Witchcraft (needed for magic)</label>
+                <label for="selWitchcraft" name="Witchcraft">Witchcraft (magic stat)</label>
                 <select id="selWitchcraft" size="2" name="Witchcraft">
                     <option selected value="">No</option>
                     <option value="素質,妖術知識,1">Yes</option>
@@ -873,7 +878,7 @@
             <br>
             <button class="collapsible"><b>Sex Traits / ABL</b></button>
             <div class="content"><br>          
-                <div class="column4">             
+                <div class="column5">             
                     <label for="selSexual-Preference" name="Sexual-Preference">Preferred Sexual Activity</label>
                     <select id="selSexual-Preference" name="Sexual-Preference">
                         <option selected value="">-- Choose Preferred Sexual Activity --</option>
@@ -1931,13 +1936,19 @@
         </center>
 
             <div>
-                <textarea id="msg" name="msg" placeholder="Insert any comments you have (if any), if you had some specific idea in mind while creating this character. NO ENTERS!" style="height:100px"></textarea><br>
+                Creator Name: 
+                <input type="text" id="txtCreator" placeholder="Anonymous"><br>
             </div>
+
             <div>
-                <input type="button" id="bt" value="Save data to file" onclick="saveFile()"><br>
-                    
-                <center>Special thanks to the /egg/ discord</center>
+                <textarea id="msg" name="msg" placeholder="Insert any comments you have (if any), if you had some specific idea in mind while creating this character. NO ENTERS!"></textarea><br>
             </div>
+
+            <div>
+                <input type="button" id="bt" value="Save data to CSV" onclick="saveFile()"><br>      
+            </div>
+              
+                <br><center><p style="color:white;">Special thanks to the /egg/ discord</p></center>
             <br><br>
 
     </div>
@@ -1989,6 +2000,7 @@
 
             //Physical Traits
             const virgin = document.getElementById('selVirgin');
+            const virginb = document.getElementById('selVirginB');
             const neverkissed = document.getElementById('selNeverKissed');
             const csensitive = document.getElementById('selC-Sensitive');
             const vsensitive = document.getElementById('selV-Sensitive');
@@ -2161,7 +2173,7 @@
 
    
             // Phys List
-            let traitListPhys = [virgin.value, neverkissed.value, csensitive.value, vsensitive.value, asensitive.value, bsensitive.value, msensitive.value, smellsensitive.value, getswetslowly.value, strongstomach.value, skilledtongue.value, weakbladder.value, healthy.value, frail.value, nicelegs.value, nicebutt.value, usensitive.value, lactating.value, childsbody.value, animalears.value, tail.value, hairlength.value, currentarmpithair.value, bustsize.value, penissize.value, hipsize.value, bodytype.value, currentpubichair.value];
+            let traitListPhys = [virgin.value, virginb.value, neverkissed.value, csensitive.value, vsensitive.value, asensitive.value, bsensitive.value, msensitive.value, smellsensitive.value, getswetslowly.value, strongstomach.value, skilledtongue.value, weakbladder.value, healthy.value, frail.value, nicelegs.value, nicebutt.value, usensitive.value, lactating.value, childsbody.value, animalears.value, tail.value, hairlength.value, currentarmpithair.value, bustsize.value, penissize.value, hipsize.value, bodytype.value, currentpubichair.value];
             let traitFilterPhys = [];
 
             for(i = 0; i < traitListPhys.length; i++){
@@ -2243,6 +2255,7 @@
 
             //etc
             const msg = document.getElementById('msg');
+            const creator = document.getElementById('txtCreator');
 
             // This variable stores all the data.
             let data = 
@@ -2308,13 +2321,17 @@
                 //Might be related to the fullwidth V. The way it works now is that there's an extra \r\n\ printed in the list itself which for some reason works.
                 traitEXP2Print + 
 
-                '\r\n' +               
-            
+                '\r\n' +     
+
+                ';--- Creator: ' + creator.value + '\r\n' + 
+
+                '\r\n' + 
+                
                 ';--- Creator comments: ' + msg.value + '\r\n' + 
 
                 '\r\n' + 
 
-                ';--- This character was generated by RoBuster / eraFEK Character Maker v1.1 ---';
+                ';--- This character was generated by RoBuster / eraFEK Character Maker v1.2 ---';
             
             // Convert the text to BLOB.
             var BOM = "\uFEFF";

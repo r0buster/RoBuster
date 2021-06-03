@@ -569,8 +569,8 @@
                 <label for="selDocile" name="Docile">Impressionable</label>
                 <select id="selDocile" name="Docile">
                     <option selected value="">No trait</option>
-                    <option value="素質,大人しい,1">Docile</option>
-                    <option value="素質,素直,1">Stubborn</option>
+                    <option value="素質,素直,1">Docile</option>
+                    <option value="素質,気丈,1">Stubborn</option>
                 </select><br><br>
                 
                 <label for="selQuiet" name="Quiet">Boldness</label>
@@ -584,7 +584,7 @@
                 <select id="selHumble" name="Humble">
                     <option selected value="">No</option>
                     <option value="素質,プライド低い,1">Humble</option>
-                    <option value="素質,ツンデレ,1">Prideful</option>
+                    <option value="素質,プライド高い,1">Prideful</option>
                 </select><br><br>
 
                 <label for="selCurious" name="Curious">Desire to try new things</label>
@@ -641,7 +641,7 @@
                 <label for="selVirtuous" name="Virtuous">Virtuous</label>
                 <select id="selVirtuous" size="2" name="Virtuous">
                     <option selected value="">No</option>
-                    <option value="素質,一線越えない,1">Yes</option>
+                    <option value="素質,貞操観念,1">Yes</option>
                 </select><br><br>
 
                 <label for="selTsundere" name="Tsundere">Tsundere</label>
@@ -825,7 +825,9 @@
                 </select><br><br>
             </div>
             <br>
+            If you don't touch these sliders, the game will calculate these based on the traits you give the character.<br>
             <div class="column3">
+                
                 <div class="slidecontainer">
                     <input type="range" min="0" max="1000" value="0" class="slider" id="sliderPerversion" step="50">
                     <p>Perversion: <span id="PerversionSlide"></span></p>
@@ -2098,7 +2100,6 @@
             const enchanting = document.getElementById('selEnchanting');
             const popular = document.getElementById('selPopular');
             const childsmind = document.getElementById('selChilds-Mind');
-            const heavydrinker = document.getElementById('selHeavy-Drinker');
             const insatiable = document.getElementById('selInsatiable');
             const nondrinker = document.getElementById('selNon-drinker');
             const providence = document.getElementById('selProvidence');

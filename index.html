@@ -2043,6 +2043,7 @@
             const animalears = document.getElementById('selAnimal-Ears');
             const tail = document.getElementById('selTail');
             const haircolor = document.getElementById('selHairColor');
+            let printHair = '0x' + haircolor.value.slice(1)   
             const hairlength = document.getElementById('selHairLength');
             const vtightness = document.getElementById('sliderVTightness');
             const atightness = document.getElementById('sliderATightness');
@@ -2321,7 +2322,7 @@
                 ';--- Physical Traits ---' + '\r\n' +
                 '素質,性別,' + sex.value + '\r\n' + 
                 traitPhysPrint +
-                ';素質,髪色,0x' + haircolor.value + '  ;Remove the #' + '\r\n' +
+                ';素質,髪色,' + printHair + '\r\n' +
                 '素質,Ｖ締まり,' + vtightness.value + '\r\n' + 
                 '素質,Ａ締まり,' + atightness.value + '\r\n' + 
 
@@ -2378,4 +2379,7 @@
             newLink.click(); 
         }
     </script>
+
+<!-- Special thanks to RFB -->
+
 </html>

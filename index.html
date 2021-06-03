@@ -2021,6 +2021,7 @@
             //Physical Traits
             const virgin = document.getElementById('selVirgin');
             const virginb = document.getElementById('selVirginB');
+            const analvirgin = document.getElementById('selAnalVirgin');
             const neverkissed = document.getElementById('selNeverKissed');
             const csensitive = document.getElementById('selC-Sensitive');
             const vsensitive = document.getElementById('selV-Sensitive');
@@ -2059,7 +2060,7 @@
             const assertived = document.getElementById('sliderAssertiveDaily');
             const assertives = document.getElementById('sliderAssertiveSexual');
 
-            //Add piercings!!
+            //Add piercings?
 
             //Mind Traits
             const timid = document.getElementById('selTimid');
@@ -2199,7 +2200,7 @@
             const usensexp = document.getElementById('numUSensExp');
    
             // Phys List
-            let traitListPhys = [virgin.value, virginb.value, neverkissed.value, csensitive.value, vsensitive.value, asensitive.value, bsensitive.value, msensitive.value, smellsensitive.value, getswetslowly.value, strongstomach.value, skilledtongue.value, weakbladder.value, healthy.value, frail.value, nicelegs.value, nicebutt.value, usensitive.value, lactating.value, childsbody.value, animalears.value, tail.value, hairlength.value, currentarmpithair.value, bustsize.value, penissize.value, hipsize.value, bodytype.value, currentpubichair.value];
+            let traitListPhys = [virgin.value, virginb.value, analvirgin.value, neverkissed.value, csensitive.value, vsensitive.value, asensitive.value, bsensitive.value, msensitive.value, smellsensitive.value, getswetslowly.value, strongstomach.value, skilledtongue.value, weakbladder.value, healthy.value, frail.value, nicelegs.value, nicebutt.value, usensitive.value, lactating.value, childsbody.value, animalears.value, tail.value, hairlength.value, currentarmpithair.value, bustsize.value, penissize.value, hipsize.value, bodytype.value, currentpubichair.value];
             let traitFilterPhys = [];
 
             for(i = 0; i < traitListPhys.length; i++){
@@ -2317,6 +2318,7 @@
                 '能力,歌唱,' + sing.value + '\r\n' + 
                 '能力,料理,' + cook.value + '\r\n' + 
                 '能力,野心,' + amb.value + '\r\n' + 
+                '素質,成長型,' + growthtype.value + '\r\n' + 
                 '\r\n' + 
 
                 ';--- Physical Traits ---' + '\r\n' +
